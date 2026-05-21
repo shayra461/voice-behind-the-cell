@@ -23,9 +23,7 @@ export function Nav() {
     <>
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-background/95 border-b border-border/60 shadow-[0_12px_32px_-24px_oklch(0_0_0_/_85%)]"
-            : "bg-transparent"
+          scrolled ? "bg-background/85 backdrop-blur-xl border-b border-border/60" : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 md:px-10 h-20 md:h-24 flex items-center justify-between">
@@ -34,62 +32,35 @@ export function Nav() {
           </a>
           <nav className="hidden lg:flex items-center gap-9">
             {items.map((i) => (
-              <a
-                key={i.href}
-                href={i.href}
-                className="text-xs uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground transition-colors relative group"
-              >
+              <a key={i.href} href={i.href} className="text-xs uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground transition-colors relative group">
                 {i.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-blood group-hover:w-full transition-all duration-300" />
               </a>
             ))}
           </nav>
-          <a
-            href="#action"
-            className="hidden md:inline-flex items-center gap-2 bg-blood text-primary-foreground px-5 py-2.5 text-xs uppercase tracking-[0.22em] font-semibold hover:brightness-110 transition pulse-glow"
-          >
+          <a href="#action" className="hidden md:inline-flex items-center gap-2 bg-blood text-primary-foreground px-5 py-2.5 text-xs uppercase tracking-[0.22em] font-semibold hover:brightness-110 transition pulse-glow">
             <span className="size-1.5 rounded-full bg-white animate-pulse" /> Take Action
           </a>
-          <button
-            onClick={() => setOpen(!open)}
-            className="lg:hidden text-foreground"
-            aria-label="Menu"
-          >
+          <button onClick={() => setOpen(!open)} className="lg:hidden text-foreground" aria-label="Menu">
             <div className="space-y-1.5">
-              <span
-                className={`block h-px w-7 bg-foreground transition-transform ${open ? "translate-y-1.5 rotate-45" : ""}`}
-              />
-              <span
-                className={`block h-px w-7 bg-foreground transition-opacity ${open ? "opacity-0" : ""}`}
-              />
-              <span
-                className={`block h-px w-7 bg-foreground transition-transform ${open ? "-translate-y-1.5 -rotate-45" : ""}`}
-              />
+              <span className={`block h-px w-7 bg-foreground transition-transform ${open ? "translate-y-1.5 rotate-45" : ""}`} />
+              <span className={`block h-px w-7 bg-foreground transition-opacity ${open ? "opacity-0" : ""}`} />
+              <span className={`block h-px w-7 bg-foreground transition-transform ${open ? "-translate-y-1.5 -rotate-45" : ""}`} />
             </div>
           </button>
         </div>
         {open && (
-          <div className="lg:hidden bg-background/98 border-t border-border/60 shadow-[0_18px_40px_-30px_oklch(0_0_0_/_85%)]">
+          <div className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-border/60">
             <div className="px-6 py-6 flex flex-col gap-5">
               {items.map((i) => (
-                <a
-                  key={i.href}
-                  href={i.href}
-                  onClick={() => setOpen(false)}
-                  className="text-sm uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground"
-                >
-                  {i.label}
-                </a>
+                <a key={i.href} href={i.href} onClick={() => setOpen(false)} className="text-sm uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground">{i.label}</a>
               ))}
             </div>
           </div>
         )}
       </header>
       {/* Mobile sticky CTA */}
-      <a
-        href="#action"
-        className="md:hidden fixed bottom-7 inset-x-4 z-[58] bg-blood text-primary-foreground text-center py-4 text-xs uppercase tracking-[0.28em] font-bold shadow-2xl glow-blood"
-      >
+      <a href="#action" className="md:hidden fixed bottom-4 inset-x-4 z-50 bg-blood text-primary-foreground text-center py-4 text-xs uppercase tracking-[0.28em] font-bold shadow-2xl glow-blood">
         Sign the Petition
       </a>
     </>
