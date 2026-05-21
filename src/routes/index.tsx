@@ -498,7 +498,7 @@ function Evidence() {
 
         <div className="mt-16 grid md:grid-cols-12 gap-6">
           <Reveal className="md:col-span-7">
-            <figure className="relative aspect-[16/11] overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)] group">
+            <figure className="relative aspect-[16/11] overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)] group" data-parallax="0.08" data-parallax-tilt="5" data-parallax-z="60">
               <img src={news} alt="Local news coverage of custodial cases in San Antonio" className="absolute inset-0 w-full h-full object-cover ken-burns" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
               <figcaption className="absolute bottom-6 left-6 right-6">
