@@ -9,8 +9,7 @@ export function DocHUD() {
   const [tc, setTc] = useState("00:00:00:00");
 
   useEffect(() => {
-    const start = performance.now();
-    let raf = 0;
+    const start = Date.now();
     const tick = () => {
       const elapsed = (performance.now() - start) / 1000;
       const h = Math.floor(elapsed / 3600)
@@ -26,10 +25,10 @@ export function DocHUD() {
         .toString()
         .padStart(2, "0");
       setTc(`${h}:${m}:${s}:${f}`);
-      raf = requestAnimationFrame(tick);
     };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+    tick();
+    const timer = window.setInterval(tick, 250);
+    return () => window.clearInterval(timer);
   }, []);
 
   return (
