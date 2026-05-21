@@ -156,11 +156,11 @@
     z-index: 3;
   }
 
-  /* Letterbox bars — top + bottom black cinema bars */
+  /* Letterbox bars — top + bottom cinema bars. Sit BEHIND nav (z-50) so logo isn't clipped. */
   .letterbox::before, .letterbox::after {
     content: ""; position: fixed; left: 0; right: 0;
     height: 28px; background: #000;
-    z-index: 60; pointer-events: none;
+    z-index: 45; pointer-events: none;
   }
   .letterbox::before { top: 0; box-shadow: 0 1px 0 oklch(1 0 0 / 6%); }
   .letterbox::after  { bottom: 0; box-shadow: 0 -1px 0 oklch(1 0 0 / 6%); }
