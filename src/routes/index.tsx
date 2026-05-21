@@ -10,6 +10,7 @@ import banner from "@/assets/families-banner.jpeg";
 import vigil from "@/assets/courthouse-vigil.jpeg";
 import circle from "@/assets/community-circle.jpeg";
 import flyer from "@/assets/memorial-flyer.jpeg";
+import logo from "@/assets/logo.svg";
 import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
