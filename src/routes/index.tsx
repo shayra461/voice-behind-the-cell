@@ -20,6 +20,7 @@ import news from "@/assets/upload-news.jpeg";
 import comments from "@/assets/upload-comments.jpeg";
 import protestSign from "@/assets/upload-protest-sign.jpeg";
 import { useEffect, useState } from "react";
+import { useGlobalParallax } from "@/hooks/useGlobalParallax";
 
 export const Route = createFileRoute("/")({
   component: Index,
