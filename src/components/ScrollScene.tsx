@@ -61,9 +61,9 @@ export function ScrollScene({
       ref={ref}
       className={className}
       style={{
-        willChange: "transform, opacity, filter",
+        willChange: "transform, opacity",
         transformOrigin: "center center",
-        transition: "transform 120ms linear, opacity 120ms linear, filter 120ms linear",
+        transition: "transform 120ms linear, opacity 120ms linear",
       }}
     >
       {children}
