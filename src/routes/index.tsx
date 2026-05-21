@@ -56,14 +56,14 @@ function Index() {
     <div id="top" className="relative overflow-x-hidden">
       <Nav />
       <Hero y={y} />
-      <Ticker />
-      <Story />
-      <Timeline />
-      <Awareness />
-      <Issue />
-      <Evidence />
-      <Action />
-      <Involved />
+      <ScrollScene intensity={0.7}><Ticker /></ScrollScene>
+      <ScrollScene><Story /></ScrollScene>
+      <ScrollScene><Timeline /></ScrollScene>
+      <ScrollScene><Awareness /></ScrollScene>
+      <ScrollScene><Issue /></ScrollScene>
+      <ScrollScene><Evidence /></ScrollScene>
+      <ScrollScene><Action /></ScrollScene>
+      <ScrollScene><Involved /></ScrollScene>
       <Footer />
     </div>
   );
