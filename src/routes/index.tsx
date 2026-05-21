@@ -264,11 +264,14 @@ function Timeline() {
 function Awareness() {
   const gallery = [
     { src: courthouse, label: "Courthouse Rally", cls: "md:col-span-2 md:row-span-2 aspect-square" },
+    { src: stage, label: "Speaking Truth Nationally", cls: "aspect-[4/5]" },
+    { src: testimony, label: "Testifying at the Capitol", cls: "aspect-[4/5]" },
+    { src: familiesBanner, label: "Names We Refuse to Forget", cls: "md:col-span-2 aspect-[16/10]" },
     { src: policies, label: "Change Jail Policies", cls: "aspect-[4/5]" },
     { src: council, label: "Council Chambers", cls: "aspect-[4/5]" },
-    { src: banner, label: "Names We Remember", cls: "md:col-span-2 aspect-[16/10]" },
-    { src: vigil, label: "Vigil Outside The Courthouse", cls: "aspect-[4/5]" },
-    { src: circle, label: "Families United", cls: "md:col-span-2 aspect-[16/9]" },
+    { src: banner, label: "Families United", cls: "md:col-span-2 aspect-[16/9]" },
+    { src: vigil, label: "Vigil Outside the Courthouse", cls: "aspect-[3/4]" },
+    { src: circle, label: "A Community That Will Not Be Silent", cls: "aspect-[3/4]" },
     { src: flyer, label: "Silent Protest & Memorial", cls: "aspect-[3/4]" },
   ];
   return (
