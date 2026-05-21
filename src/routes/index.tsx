@@ -208,8 +208,9 @@ const events = [
   { date: "Detention", title: "Taken Into Custody", body: "Detained at Bexar County Jail. Family expected him home within days. He was healthy. He was alive.", img: jail },
   { date: "Inside", title: "Calls For Help Ignored", body: "Reports describe medical distress, neglected requests, and the deliberate silence of those entrusted with his safety.", img: null },
   { date: "The Incident", title: "Death In Custody", body: "He died behind a cell door that was supposed to protect him. The family was given no clear explanation. No body cam. No witnesses. No accountability.", img: null },
-  { date: "Community Response", title: "Families Rise", body: "Mothers, brothers, sisters, neighbors — a movement formed at the courthouse steps refusing to let his name be erased.", img: courthouse },
-  { date: "Investigation Demanded", title: "We Showed Up at Council", body: "Voices Behind The Cell brought photographs of the dead into the council chambers. The city was forced to listen.", img: council },
+  { date: "Community Response", title: "Families Rise", body: "Mothers, brothers, sisters, neighbors — a movement formed at the courthouse steps refusing to let his name be erased.", img: familiesBanner },
+  { date: "Testimony", title: "We Spoke Before the State", body: "Voices Behind The Cell stood before the Texas House Committee on County Affairs — wearing the faces of the dead — and forced legislators to listen.", img: testimony },
+  { date: "Investigation Demanded", title: "We Showed Up at Council", body: "We brought photographs of the dead into the council chambers. The city was forced to look.", img: council },
   { date: "Today", title: "Still No Justice", body: "The case remains open in our hearts. The fight continues. Every signature, every share, every protest brings us closer to the truth.", img: null },
 ];
 
