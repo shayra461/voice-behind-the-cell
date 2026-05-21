@@ -10,18 +10,25 @@ export function DocHUD() {
 
   useEffect(() => {
     const start = performance.now();
-    let raf = 0;
     const tick = () => {
       const elapsed = (performance.now() - start) / 1000;
-      const h = Math.floor(elapsed / 3600).toString().padStart(2, "0");
-      const m = Math.floor((elapsed % 3600) / 60).toString().padStart(2, "0");
-      const s = Math.floor(elapsed % 60).toString().padStart(2, "0");
-      const f = Math.floor((elapsed * 24) % 24).toString().padStart(2, "0");
+      const h = Math.floor(elapsed / 3600)
+        .toString()
+        .padStart(2, "0");
+      const m = Math.floor((elapsed % 3600) / 60)
+        .toString()
+        .padStart(2, "0");
+      const s = Math.floor(elapsed % 60)
+        .toString()
+        .padStart(2, "0");
+      const f = Math.floor((elapsed * 24) % 24)
+        .toString()
+        .padStart(2, "0");
       setTc(`${h}:${m}:${s}:${f}`);
-      raf = requestAnimationFrame(tick);
     };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+    tick();
+    const timer = window.setInterval(tick, 250);
+    return () => window.clearInterval(timer);
   }, []);
 
   return (
@@ -39,7 +46,7 @@ export function DocHUD() {
       </div>
 
       {/* REC indicator — top-right under nav */}
-      <div className="hidden md:flex pointer-events-none fixed top-7 right-8 z-[59] items-center gap-2.5 px-3 py-1.5 bg-background/55 backdrop-blur border border-bone/15">
+      <div className="hidden md:flex pointer-events-none fixed top-7 right-8 z-[59] items-center gap-2.5 px-3 py-1.5 bg-background/85 border border-bone/15 shadow-[0_10px_26px_-18px_oklch(0_0_0_/_90%)]">
         <span className="rec-dot" />
         <span className="text-[10px] uppercase tracking-[0.32em] font-bold text-bone">REC</span>
         <span className="text-[10px] tracking-[0.18em] text-bone/70 tabular-nums">{tc}</span>
