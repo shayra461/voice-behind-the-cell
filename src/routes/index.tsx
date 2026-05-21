@@ -530,8 +530,9 @@ function Evidence() {
 function Action() {
   return (
     <section id="action" className="relative py-28 md:py-44 px-6 md:px-10 overflow-hidden grain vignette">
-      <div className="absolute inset-0">
-        <img src={jail} alt="" className="w-full h-full object-cover ken-burns" />
+      <div className="absolute inset-0" data-parallax="0.18" data-parallax-scale="-0.08">
+        <img src={jail} alt="" className="w-full h-[120%] object-cover ken-burns" />
+
         <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background/95" />
         <div className="absolute inset-0 bg-blood/10 mix-blend-overlay" />
       </div>
