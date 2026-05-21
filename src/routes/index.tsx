@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/Nav";
 import { Reveal } from "@/components/Reveal";
+import { DocHUD } from "@/components/DocHUD";
 import hero from "@/assets/hero-portrait.jpeg";
 import jail from "@/assets/jail-accountability.jpeg";
 import council from "@/assets/council-protest.jpeg";
