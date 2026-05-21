@@ -955,12 +955,12 @@ function Footer() {
                 justice@voicesbehindthecell.org
               </a>
             </li>
-            <li className="pt-2 flex gap-3">
+            <li className="pt-2 flex flex-wrap gap-3">
               {["Facebook", "Instagram", "TikTok", "YouTube"].map((s) => (
                 <a
                   key={s}
                   href="#"
-                  className="text-[10px] uppercase tracking-[0.22em] border border-border/80 px-3 py-2 hover:border-blood hover:text-blood transition"
+                  className="text-[10px] uppercase tracking-[0.18em] border border-border/80 px-3 py-2 hover:border-blood hover:text-blood transition"
                 >
                   {s}
                 </a>
@@ -969,7 +969,7 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-border/60 flex flex-col md:flex-row gap-4 justify-between text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-border/60 flex flex-col md:flex-row gap-4 justify-between text-[11px] uppercase tracking-[0.12em] md:tracking-[0.22em] text-muted-foreground">
         <div>© {new Date().getFullYear()} Voices Behind The Cell · All Rights Reserved</div>
         <div>A Community Justice Campaign · San Antonio, TX</div>
       </div>
