@@ -53,7 +53,8 @@ function useParallax() {
 function Index() {
   const y = useParallax();
   return (
-    <div id="top" className="relative overflow-x-hidden">
+    <div id="top" className="relative overflow-x-hidden letterbox scene-3d">
+      <DocHUD />
       <Nav />
       <Hero y={y} />
       <Ticker />
