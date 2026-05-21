@@ -510,7 +510,7 @@ function Evidence() {
             </figure>
           </Reveal>
           <Reveal className="md:col-span-5" delay={1}>
-            <figure className="relative aspect-[3/4] md:aspect-auto md:h-full overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)] group">
+            <figure className="relative aspect-[3/4] md:aspect-auto md:h-full overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)] group" data-parallax="0.1" data-parallax-tilt="-6" data-parallax-z="80">
               <img src={comments} alt="Community comments and condolences shared online" className="absolute inset-0 w-full h-full object-cover object-top ken-burns" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
               <figcaption className="absolute bottom-6 left-6 right-6">
