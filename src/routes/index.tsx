@@ -11,6 +11,12 @@ import vigil from "@/assets/courthouse-vigil.jpeg";
 import circle from "@/assets/community-circle.jpeg";
 import flyer from "@/assets/memorial-flyer.jpeg";
 import logo from "@/assets/logo.svg";
+import emblem from "@/assets/upload-emblem.jpeg";
+import stage from "@/assets/upload-stage.jpeg";
+import familiesBanner from "@/assets/upload-families-banner.jpeg";
+import testimony from "@/assets/upload-testimony.jpeg";
+import news from "@/assets/upload-news.jpeg";
+import comments from "@/assets/upload-comments.jpeg";
 import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
@@ -53,6 +59,7 @@ function Index() {
       <Timeline />
       <Awareness />
       <Issue />
+      <Evidence />
       <Action />
       <Involved />
       <Footer />
@@ -153,6 +160,10 @@ function Story() {
             </div>
             <div className="absolute top-6 left-6 w-10 h-px bg-blood" />
             <div className="absolute top-6 left-6 h-10 w-px bg-blood" />
+            <div className="absolute -bottom-8 -right-6 md:-right-10 w-32 md:w-44 aspect-square overflow-hidden border border-border/70 bg-background shadow-[var(--shadow-cinematic)] rotate-[3deg] hidden sm:block">
+              <img src={emblem} alt="Voices Behind The Cell emblem" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-background/20 mix-blend-multiply" />
+            </div>
           </div>
         </Reveal>
         <div>
@@ -202,8 +213,9 @@ const events = [
   { date: "Detention", title: "Taken Into Custody", body: "Detained at Bexar County Jail. Family expected him home within days. He was healthy. He was alive.", img: jail },
   { date: "Inside", title: "Calls For Help Ignored", body: "Reports describe medical distress, neglected requests, and the deliberate silence of those entrusted with his safety.", img: null },
   { date: "The Incident", title: "Death In Custody", body: "He died behind a cell door that was supposed to protect him. The family was given no clear explanation. No body cam. No witnesses. No accountability.", img: null },
-  { date: "Community Response", title: "Families Rise", body: "Mothers, brothers, sisters, neighbors — a movement formed at the courthouse steps refusing to let his name be erased.", img: courthouse },
-  { date: "Investigation Demanded", title: "We Showed Up at Council", body: "Voices Behind The Cell brought photographs of the dead into the council chambers. The city was forced to listen.", img: council },
+  { date: "Community Response", title: "Families Rise", body: "Mothers, brothers, sisters, neighbors — a movement formed at the courthouse steps refusing to let his name be erased.", img: familiesBanner },
+  { date: "Testimony", title: "We Spoke Before the State", body: "Voices Behind The Cell stood before the Texas House Committee on County Affairs — wearing the faces of the dead — and forced legislators to listen.", img: testimony },
+  { date: "Investigation Demanded", title: "We Showed Up at Council", body: "We brought photographs of the dead into the council chambers. The city was forced to look.", img: council },
   { date: "Today", title: "Still No Justice", body: "The case remains open in our hearts. The fight continues. Every signature, every share, every protest brings us closer to the truth.", img: null },
 ];
 
@@ -257,11 +269,14 @@ function Timeline() {
 function Awareness() {
   const gallery = [
     { src: courthouse, label: "Courthouse Rally", cls: "md:col-span-2 md:row-span-2 aspect-square" },
+    { src: stage, label: "Speaking Truth Nationally", cls: "aspect-[4/5]" },
+    { src: testimony, label: "Testifying at the Capitol", cls: "aspect-[4/5]" },
+    { src: familiesBanner, label: "Names We Refuse to Forget", cls: "md:col-span-2 aspect-[16/10]" },
     { src: policies, label: "Change Jail Policies", cls: "aspect-[4/5]" },
     { src: council, label: "Council Chambers", cls: "aspect-[4/5]" },
-    { src: banner, label: "Names We Remember", cls: "md:col-span-2 aspect-[16/10]" },
-    { src: vigil, label: "Vigil Outside The Courthouse", cls: "aspect-[4/5]" },
-    { src: circle, label: "Families United", cls: "md:col-span-2 aspect-[16/9]" },
+    { src: banner, label: "Families United", cls: "md:col-span-2 aspect-[16/9]" },
+    { src: vigil, label: "Vigil Outside the Courthouse", cls: "aspect-[3/4]" },
+    { src: circle, label: "A Community That Will Not Be Silent", cls: "aspect-[3/4]" },
     { src: flyer, label: "Silent Protest & Memorial", cls: "aspect-[3/4]" },
   ];
   return (
@@ -362,6 +377,59 @@ function Issue() {
               </article>
             </Reveal>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Evidence() {
+  return (
+    <section id="evidence" className="relative py-24 md:py-36 px-6 md:px-10 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <Reveal>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="h-px w-10 bg-blood" />
+            <span className="tag-eyebrow">Voices of the Community</span>
+          </div>
+        </Reveal>
+        <Reveal delay={1}>
+          <h2 className="font-display uppercase text-4xl md:text-6xl leading-[0.9] text-bone max-w-4xl">
+            The proof is in the<br /><span className="text-blood">voices left behind.</span>
+          </h2>
+        </Reveal>
+        <Reveal delay={2}>
+          <p className="mt-6 text-foreground/75 max-w-2xl leading-relaxed">
+            The local press has reported. Families have testified. Neighbors have grieved
+            publicly. The pattern is undeniable — and the record is permanent.
+          </p>
+        </Reveal>
+
+        <div className="mt-16 grid md:grid-cols-12 gap-6">
+          <Reveal className="md:col-span-7">
+            <figure className="relative aspect-[16/11] overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)] group">
+              <img src={news} alt="Local news coverage of custodial cases in San Antonio" className="absolute inset-0 w-full h-full object-cover ken-burns" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+              <figcaption className="absolute bottom-6 left-6 right-6">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-blood font-bold mb-2">In the Press</div>
+                <div className="font-editorial italic text-bone text-xl leading-snug max-w-xl">
+                  Local reporters keep returning to the same courtrooms — and the same families.
+                </div>
+              </figcaption>
+            </figure>
+          </Reveal>
+          <Reveal className="md:col-span-5" delay={1}>
+            <figure className="relative aspect-[3/4] md:aspect-auto md:h-full overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)] group">
+              <img src={comments} alt="Community comments and condolences shared online" className="absolute inset-0 w-full h-full object-cover object-top ken-burns" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+              <figcaption className="absolute bottom-6 left-6 right-6">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-blood font-bold mb-2">Public Outcry</div>
+                <div className="font-editorial italic text-bone text-lg leading-snug">
+                  "I also lost a son in Bexar County Jail." — one of hundreds of public testimonies.
+                </div>
+              </figcaption>
+            </figure>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -493,7 +561,7 @@ function Footer() {
         <div className="md:col-span-3">
           <div className="tag-eyebrow mb-5">Navigate</div>
           <ul className="space-y-3 text-sm">
-            {[["#story","His Story"],["#timeline","Timeline"],["#awareness","Awareness"],["#issue","The Issue"],["#action","Take Action"]].map(([h,l]) => (
+            {[["#story","His Story"],["#timeline","Timeline"],["#awareness","Awareness"],["#issue","The Issue"],["#evidence","Evidence"],["#action","Take Action"]].map(([h,l]) => (
               <li key={h}><a href={h} className="text-foreground/80 hover:text-blood transition">{l}</a></li>
             ))}
           </ul>
