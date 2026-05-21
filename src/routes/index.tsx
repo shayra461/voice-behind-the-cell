@@ -152,7 +152,7 @@ function Story() {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <Reveal>
           <div className="relative aspect-[5/4] overflow-hidden grain shadow-[var(--shadow-cinematic)]">
-            <img src={hero} alt="Portrait of a mother holding her son's photograph" className="w-full h-full object-cover object-center ken-burns" />
+            <img src={hero} alt="A grieving mother holding a phone with a photograph of her son" className="w-full h-full object-cover object-center" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
               <div className="text-[10px] uppercase tracking-[0.32em] text-blood font-bold mb-2">A Mother's Memory</div>
