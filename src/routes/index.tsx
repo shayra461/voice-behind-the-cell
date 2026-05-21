@@ -594,7 +594,7 @@ function Involved() {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
         <div className="lg:col-span-2 relative">
           <Reveal>
-            <div className="relative aspect-[4/5] overflow-hidden grain shadow-[var(--shadow-cinematic)]">
+            <div className="relative aspect-[4/5] overflow-hidden grain shadow-[var(--shadow-cinematic)]" data-parallax="0.1" data-parallax-tilt="6" data-parallax-z="60">
               <img src={circle} alt="Community gathered in support" className="w-full h-full object-cover ken-burns" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 font-editorial italic text-bone text-lg">"Together we are louder than any single voice."</div>
