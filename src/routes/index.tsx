@@ -59,6 +59,7 @@ function Index() {
       <Timeline />
       <Awareness />
       <Issue />
+      <Evidence />
       <Action />
       <Involved />
       <Footer />
