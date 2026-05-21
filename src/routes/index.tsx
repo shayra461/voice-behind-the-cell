@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/Nav";
 import { Reveal } from "@/components/Reveal";
+import { ScrollScene } from "@/components/ScrollScene";
 import hero from "@/assets/hero-portrait.jpeg";
 import jail from "@/assets/jail-accountability.jpeg";
 import council from "@/assets/council-protest.jpeg";
@@ -55,14 +56,14 @@ function Index() {
     <div id="top" className="relative overflow-x-hidden">
       <Nav />
       <Hero y={y} />
-      <Ticker />
-      <Story />
-      <Timeline />
-      <Awareness />
-      <Issue />
-      <Evidence />
-      <Action />
-      <Involved />
+      <ScrollScene intensity={0.7}><Ticker /></ScrollScene>
+      <ScrollScene><Story /></ScrollScene>
+      <ScrollScene><Timeline /></ScrollScene>
+      <ScrollScene><Awareness /></ScrollScene>
+      <ScrollScene><Issue /></ScrollScene>
+      <ScrollScene><Evidence /></ScrollScene>
+      <ScrollScene><Action /></ScrollScene>
+      <ScrollScene><Involved /></ScrollScene>
       <Footer />
     </div>
   );
