@@ -398,7 +398,7 @@ function Awareness() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[minmax(140px,auto)]">
           {gallery.map((g, i) => (
             <Reveal key={i} delay={(i % 3) as 0 | 1 | 2}>
-              <figure className={`group relative overflow-hidden grain border border-border/40 ${g.cls}`}>
+              <figure className={`group relative overflow-hidden grain border border-border/40 ${g.cls}`} data-parallax={(0.04 + (i % 4) * 0.025).toFixed(3)} data-parallax-tilt={i % 2 === 0 ? "4" : "-4"} data-parallax-z={20 + (i % 3) * 25}>
                 <img src={g.src} alt={g.label} className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
                 <figcaption className="absolute bottom-4 left-4 right-4">
