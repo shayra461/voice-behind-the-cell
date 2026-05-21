@@ -70,11 +70,11 @@ function Index() {
 function Hero({ y }: { y: number }) {
   return (
     <section className="relative min-h-screen w-full overflow-hidden grain vignette flex items-center">
-      <div className="absolute inset-0" style={{ transform: `translateY(${y * 0.35}px)` }}>
-        <img src={hero} alt="" className="w-full h-[120vh] object-cover object-[60%_30%] ken-burns" />
+      <div className="absolute inset-0" style={{ transform: `translateY(${y * 0.25}px)` }}>
+        <img src={hero} alt="" className="w-full h-[120vh] object-cover object-center ken-burns" />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30 z-[1]" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/60 z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/55 to-transparent z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-background/40 z-[1]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-24 w-full">
         <Reveal>
