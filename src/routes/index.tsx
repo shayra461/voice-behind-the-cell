@@ -20,6 +20,7 @@ import news from "@/assets/upload-news.jpeg";
 import comments from "@/assets/upload-comments.jpeg";
 import protestSign from "@/assets/upload-protest-sign.jpeg";
 import { useEffect, useState } from "react";
+import { useGlobalParallax } from "@/hooks/useGlobalParallax";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -52,6 +53,7 @@ function useParallax() {
 
 function Index() {
   const y = useParallax();
+  useGlobalParallax();
   return (
     <div id="top" className="relative overflow-x-hidden letterbox scene-3d">
       <DocHUD />
@@ -204,7 +206,7 @@ function Story() {
         <Reveal className="lg:col-span-7">
           <div className="relative">
             {/* Outer protest sign — the dominant, dramatic frame */}
-            <div className="relative aspect-[4/3] overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)] bg-background">
+            <div className="relative aspect-[4/3] overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)] bg-background" data-parallax="0.06" data-parallax-tilt="5" data-parallax-z="40">
               <img src={protestSign} alt="A mother holding a sign reading 'It is time to change jail policies' beside a photograph of her son" className="w-full h-full object-cover object-center ken-burns" />
               {/* Cinematic vignette — darker at edges, lets the sign breathe in the center */}
               <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/15 to-background/40" />
@@ -232,7 +234,7 @@ function Story() {
             </div>
 
             {/* Inset memorial portrait — smaller, anchored bottom-right, off the grid */}
-            <div className="hidden md:block absolute -bottom-10 -right-6 lg:-right-12 w-48 lg:w-60 aspect-[4/5] overflow-hidden grain border border-border/70 shadow-[var(--shadow-cinematic)] bg-background">
+            <div className="hidden md:block absolute -bottom-10 -right-6 lg:-right-12 w-48 lg:w-60 aspect-[4/5] overflow-hidden grain border border-border/70 shadow-[var(--shadow-cinematic)] bg-background" data-parallax="0.12" data-parallax-tilt="-8" data-parallax-z="80">
               <img src={hero} alt="A grieving mother holding her son's photograph" className="w-full h-full object-cover object-[60%_center]" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
               <div className="absolute bottom-3 left-3 right-3">
@@ -339,7 +341,7 @@ function Timeline() {
                   </div>
                   <div className="hidden md:block w-1/2 px-10">
                     {e.img && (
-                      <div className="relative aspect-[4/3] overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)]">
+                      <div className="relative aspect-[4/3] overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)]" data-parallax="0.08" data-parallax-tilt={i % 2 === 0 ? "5" : "-5"} data-parallax-z="50">
                         <img src={e.img} alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                         <div className="absolute inset-0 bg-background/30 mix-blend-multiply" />
                       </div>
@@ -396,7 +398,7 @@ function Awareness() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[minmax(140px,auto)]">
           {gallery.map((g, i) => (
             <Reveal key={i} delay={(i % 3) as 0 | 1 | 2}>
-              <figure className={`group relative overflow-hidden grain border border-border/40 ${g.cls}`}>
+              <figure className={`group relative overflow-hidden grain border border-border/40 ${g.cls}`} data-parallax={(0.04 + (i % 4) * 0.025).toFixed(3)} data-parallax-tilt={i % 2 === 0 ? "4" : "-4"} data-parallax-z={20 + (i % 3) * 25}>
                 <img src={g.src} alt={g.label} className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
                 <figcaption className="absolute bottom-4 left-4 right-4">
@@ -496,7 +498,7 @@ function Evidence() {
 
         <div className="mt-16 grid md:grid-cols-12 gap-6">
           <Reveal className="md:col-span-7">
-            <figure className="relative aspect-[16/11] overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)] group">
+            <figure className="relative aspect-[16/11] overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)] group" data-parallax="0.08" data-parallax-tilt="5" data-parallax-z="60">
               <img src={news} alt="Local news coverage of custodial cases in San Antonio" className="absolute inset-0 w-full h-full object-cover ken-burns" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
               <figcaption className="absolute bottom-6 left-6 right-6">
@@ -508,7 +510,7 @@ function Evidence() {
             </figure>
           </Reveal>
           <Reveal className="md:col-span-5" delay={1}>
-            <figure className="relative aspect-[3/4] md:aspect-auto md:h-full overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)] group">
+            <figure className="relative aspect-[3/4] md:aspect-auto md:h-full overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)] group" data-parallax="0.1" data-parallax-tilt="-6" data-parallax-z="80">
               <img src={comments} alt="Community comments and condolences shared online" className="absolute inset-0 w-full h-full object-cover object-top ken-burns" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
               <figcaption className="absolute bottom-6 left-6 right-6">
@@ -528,8 +530,9 @@ function Evidence() {
 function Action() {
   return (
     <section id="action" className="relative py-28 md:py-44 px-6 md:px-10 overflow-hidden grain vignette">
-      <div className="absolute inset-0">
-        <img src={jail} alt="" className="w-full h-full object-cover ken-burns" />
+      <div className="absolute inset-0" data-parallax="0.18" data-parallax-scale="-0.08">
+        <img src={jail} alt="" className="w-full h-[120%] object-cover ken-burns" />
+
         <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background/95" />
         <div className="absolute inset-0 bg-blood/10 mix-blend-overlay" />
       </div>
@@ -591,7 +594,7 @@ function Involved() {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
         <div className="lg:col-span-2 relative">
           <Reveal>
-            <div className="relative aspect-[4/5] overflow-hidden grain shadow-[var(--shadow-cinematic)]">
+            <div className="relative aspect-[4/5] overflow-hidden grain shadow-[var(--shadow-cinematic)]" data-parallax="0.1" data-parallax-tilt="6" data-parallax-z="60">
               <img src={circle} alt="Community gathered in support" className="w-full h-full object-cover ken-burns" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 font-editorial italic text-bone text-lg">"Together we are louder than any single voice."</div>
