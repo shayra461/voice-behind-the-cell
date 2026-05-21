@@ -69,61 +69,93 @@ function Index() {
 
 function Hero({ y }: { y: number }) {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden grain vignette flex items-center">
-      <div className="absolute inset-0" style={{ transform: `translateY(${y * 0.25}px)` }}>
-        <img src={hero} alt="" className="w-full h-[120vh] object-cover object-center ken-burns" />
+    <section className="relative min-h-screen w-full overflow-hidden grain vignette">
+      {/* Atmospheric backdrop — heavily darkened so it never competes with text */}
+      <div className="absolute inset-0 z-0" style={{ transform: `translateY(${y * 0.18}px)` }}>
+        <img src={hero} alt="" className="w-full h-[120vh] object-cover object-[80%_25%] scale-110 blur-sm opacity-30" />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/55 to-transparent z-[1]" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-background/40 z-[1]" />
+      <div className="absolute inset-0 z-[1] bg-background/85" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-background via-transparent to-background" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-24 w-full">
-        <Reveal>
-          <div className="flex items-center gap-3 mb-8">
-            <span className="h-px w-12 bg-blood" />
-            <span className="tag-eyebrow">A Digital Protest · Est. 2020</span>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-28 md:pt-32 pb-24 w-full min-h-screen flex items-center">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center w-full">
+          {/* TEXT — left 7 cols, fully clear */}
+          <div className="lg:col-span-7">
+            <Reveal>
+              <div className="flex items-center gap-3 mb-8">
+                <span className="h-px w-12 bg-blood" />
+                <span className="tag-eyebrow">A Digital Protest · Est. 2020</span>
+              </div>
+            </Reveal>
+            <Reveal delay={1}>
+              <h1 className="font-display uppercase text-[clamp(3rem,8.4vw,8rem)] leading-[0.85] tracking-tight text-bone">
+                Justice<br />
+                <span className="text-blood">Behind</span><br />
+                The Cell.
+              </h1>
+            </Reveal>
+            <Reveal delay={2}>
+              <p className="mt-8 font-editorial italic text-2xl md:text-3xl text-foreground/90 max-w-2xl leading-snug">
+                He died in custody. <span className="text-blood not-italic font-semibold">We demand answers.</span>
+              </p>
+            </Reveal>
+            <Reveal delay={2}>
+              <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
+                Join us in holding the system accountable and demanding transparency,
+                justice, and reform for every life lost behind the walls of Bexar County Jail.
+              </p>
+            </Reveal>
+            <Reveal delay={3}>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <a href="#action" className="group inline-flex items-center gap-3 bg-blood text-primary-foreground px-7 py-4 text-xs uppercase tracking-[0.28em] font-bold hover:brightness-110 transition glow-blood">
+                  <span className="size-2 rounded-full bg-white animate-pulse" /> Sign the Petition
+                </a>
+                <a href="#timeline" className="inline-flex items-center gap-3 border border-border/80 text-foreground px-7 py-4 text-xs uppercase tracking-[0.28em] font-semibold hover:bg-foreground/5 transition">
+                  Demand Investigation
+                </a>
+                <a href="#story" className="inline-flex items-center gap-3 text-foreground/80 px-2 py-4 text-xs uppercase tracking-[0.28em] font-semibold hover:text-blood transition">
+                  Share His Story →
+                </a>
+              </div>
+            </Reveal>
           </div>
-        </Reveal>
-        <Reveal delay={1}>
-          <h1 className="font-display uppercase text-[clamp(3.2rem,11vw,9.5rem)] leading-[0.85] tracking-tight text-bone max-w-5xl">
-            Justice<br />
-            <span className="text-blood">Behind</span><br />
-            The Cell.
-          </h1>
-        </Reveal>
-        <Reveal delay={2}>
-          <p className="mt-10 font-editorial italic text-2xl md:text-3xl text-foreground/90 max-w-2xl leading-snug">
-            He died in custody. <span className="text-blood not-italic font-semibold">We demand answers.</span>
-          </p>
-        </Reveal>
-        <Reveal delay={2}>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
-            Join us in holding the system accountable and demanding transparency,
-            justice, and reform for every life lost behind the walls of Bexar County Jail.
-          </p>
-        </Reveal>
-        <Reveal delay={3}>
-          <div className="mt-12 flex flex-wrap gap-4">
-            <a href="#action" className="group inline-flex items-center gap-3 bg-blood text-primary-foreground px-7 py-4 text-xs uppercase tracking-[0.28em] font-bold hover:brightness-110 transition glow-blood">
-              <span className="size-2 rounded-full bg-white animate-pulse" /> Sign the Petition
-            </a>
-            <a href="#timeline" className="inline-flex items-center gap-3 border border-border/80 text-foreground px-7 py-4 text-xs uppercase tracking-[0.28em] font-semibold hover:bg-foreground/5 transition">
-              Demand Investigation
-            </a>
-            <a href="#story" className="inline-flex items-center gap-3 text-foreground/80 px-2 py-4 text-xs uppercase tracking-[0.28em] font-semibold hover:text-blood transition">
-              Share His Story →
-            </a>
-          </div>
-        </Reveal>
 
-        <div className="absolute bottom-10 left-6 md:left-10 flex items-center gap-3 scroll-indicator">
+          {/* PORTRAIT — right 5 cols, fully visible inside its own cinematic frame */}
+          <div className="lg:col-span-5 relative">
+            <Reveal delay={2}>
+              <div className="relative">
+                {/* Corner ticks */}
+                <div className="absolute -top-3 -left-3 w-6 h-px bg-blood z-20" />
+                <div className="absolute -top-3 -left-3 w-px h-6 bg-blood z-20" />
+                <div className="absolute -bottom-3 -right-3 w-6 h-px bg-blood z-20" />
+                <div className="absolute -bottom-3 -right-3 w-px h-6 bg-blood z-20" />
+
+                <div className="relative aspect-[5/6] overflow-hidden grain border border-border/70 shadow-[var(--shadow-cinematic)]">
+                  <img src={hero} alt="A grieving mother holding a phone with her son's photograph" className="w-full h-full object-cover object-[62%_center] ken-burns" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
+                  <div className="absolute top-4 left-4 px-3 py-1.5 border border-blood/70 bg-background/60 backdrop-blur text-[9px] uppercase tracking-[0.32em] text-blood font-bold">
+                    Case File · 07.20.2020
+                  </div>
+                  <div className="absolute bottom-5 left-5 right-5">
+                    <div className="text-[10px] uppercase tracking-[0.32em] text-blood font-bold mb-2">In Memoriam</div>
+                    <div className="font-editorial italic text-bone text-base md:text-lg leading-snug">
+                      "Because everyone should have a voice — especially the voices behind the cell."
+                    </div>
+                  </div>
+                </div>
+
+                <div className="hidden lg:flex absolute -left-8 top-0 bottom-0 flex-col justify-between items-center">
+                  <span className="text-[9px] uppercase tracking-[0.4em] text-muted-foreground rotate-180" style={{ writingMode: "vertical-rl" }}>Voices Behind The Cell</span>
+                  <span className="size-2 rounded-full bg-blood glow-blood" />
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+
+        <div className="absolute bottom-8 left-6 md:left-10 flex items-center gap-3 scroll-indicator">
           <div className="w-px h-12 bg-foreground/40" />
           <span className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground">Scroll</span>
-        </div>
-        <div className="hidden md:block absolute bottom-12 right-10 max-w-xs border-l-2 border-blood pl-5">
-          <div className="text-[10px] uppercase tracking-[0.32em] text-blood font-semibold mb-2">In Memoriam</div>
-          <div className="font-editorial italic text-foreground/85 text-sm leading-relaxed">
-            "Because everyone should have a voice — especially the voices behind the cell."
-          </div>
         </div>
       </div>
     </section>
