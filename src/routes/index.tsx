@@ -206,7 +206,7 @@ function Story() {
         <Reveal className="lg:col-span-7">
           <div className="relative">
             {/* Outer protest sign — the dominant, dramatic frame */}
-            <div className="relative aspect-[4/3] overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)] bg-background">
+            <div className="relative aspect-[4/3] overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)] bg-background" data-parallax="0.06" data-parallax-tilt="5" data-parallax-z="40">
               <img src={protestSign} alt="A mother holding a sign reading 'It is time to change jail policies' beside a photograph of her son" className="w-full h-full object-cover object-center ken-burns" />
               {/* Cinematic vignette — darker at edges, lets the sign breathe in the center */}
               <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/15 to-background/40" />
