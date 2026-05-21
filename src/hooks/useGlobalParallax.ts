@@ -35,8 +35,8 @@ export function useGlobalParallax() {
     const sectionStrength = isMobile ? 0.42 : 1;
     const parallaxStrength = isMobile ? 0.45 : 0.75;
     const state = new WeakMap<HTMLElement, { transform: string; opacity: string }>();
-    let latestScrollY = window.scrollY;
     let ticking = false;
+    let raf = 0;
 
     const writeIfChanged = (el: HTMLElement, transform: string, opacity = "") => {
       const prev = state.get(el);
@@ -128,10 +128,9 @@ export function useGlobalParallax() {
     };
 
     const requestTick = () => {
-      latestScrollY = window.scrollY;
       if (!ticking) {
         ticking = true;
-        requestAnimationFrame(tick);
+        raf = requestAnimationFrame(tick);
       }
     };
 
@@ -140,6 +139,7 @@ export function useGlobalParallax() {
     window.addEventListener("resize", requestTick, { passive: true });
 
     return () => {
+      cancelAnimationFrame(raf);
       window.removeEventListener("scroll", requestTick);
       window.removeEventListener("resize", requestTick);
       io.disconnect();
