@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/Nav";
 import { Reveal } from "@/components/Reveal";
+import { DocHUD } from "@/components/DocHUD";
 import hero from "@/assets/hero-portrait.jpeg";
 import jail from "@/assets/jail-accountability.jpeg";
 import council from "@/assets/council-protest.jpeg";
@@ -52,7 +53,8 @@ function useParallax() {
 function Index() {
   const y = useParallax();
   return (
-    <div id="top" className="relative overflow-x-hidden">
+    <div id="top" className="relative overflow-x-hidden letterbox scene-3d">
+      <DocHUD />
       <Nav />
       <Hero y={y} />
       <Ticker />
@@ -70,15 +72,21 @@ function Index() {
 
 function Hero({ y }: { y: number }) {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden grain vignette">
-      {/* Atmospheric backdrop — heavily darkened so it never competes with text */}
-      <div className="absolute inset-0 z-0" style={{ transform: `translateY(${y * 0.18}px)` }}>
-        <img src={hero} alt="" className="w-full h-[120vh] object-cover object-[80%_25%] scale-110 blur-sm opacity-30" />
+    <section className="relative min-h-screen w-full overflow-hidden grain vignette scanlines scene-3d">
+      {/* Atmospheric backdrop — heavily darkened so it never competes with text. 3D parallax. */}
+      <div
+        className="absolute inset-0 z-0 will-3d"
+        style={{ transform: `translate3d(0, ${y * 0.22}px, -200px) scale(1.15)` }}
+      >
+        <img src={hero} alt="" className="w-full h-[120vh] object-cover object-[80%_25%] blur-sm opacity-30" />
       </div>
       <div className="absolute inset-0 z-[1] bg-background/85" />
       <div className="absolute inset-0 z-[1] bg-gradient-to-b from-background via-transparent to-background" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-28 md:pt-32 pb-24 w-full min-h-screen flex items-center">
+      <div
+        className="relative z-10 max-w-7xl mx-auto px-5 md:px-10 pt-28 md:pt-32 pb-32 md:pb-24 w-full min-h-screen flex items-center will-3d"
+        style={{ transform: `translate3d(0, ${-y * 0.08}px, 0)` }}
+      >
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center w-full">
           {/* TEXT — left 7 cols, fully clear */}
           <div className="lg:col-span-7">
@@ -124,7 +132,10 @@ function Hero({ y }: { y: number }) {
           {/* PORTRAIT — right 5 cols, fully visible inside its own cinematic frame */}
           <div className="lg:col-span-5 relative">
             <Reveal delay={2}>
-              <div className="relative">
+              <div
+                className="relative will-3d"
+                style={{ transform: `perspective(1200px) rotateY(${Math.min(y * 0.01, 6)}deg) rotateX(${Math.min(-y * 0.005, -2)}deg) translateZ(40px)` }}
+              >
                 {/* Corner ticks */}
                 <div className="absolute -top-3 -left-3 w-6 h-px bg-blood z-20" />
                 <div className="absolute -top-3 -left-3 w-px h-6 bg-blood z-20" />

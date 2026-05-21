@@ -135,7 +135,61 @@
     color: var(--blood-glow);
     font-weight: 600;
   }
+
+  /* === DOCUMENTARY / 3D PARALLAX UTILITIES === */
+  .scene-3d { perspective: 1400px; perspective-origin: 50% 30%; }
+  .preserve-3d { transform-style: preserve-3d; }
+  .will-3d { will-change: transform; transform: translateZ(0); }
+
+  /* Scanlines — subtle CRT/VHS feel */
+  .scanlines::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      oklch(0 0 0 / 0%) 0px,
+      oklch(0 0 0 / 0%) 2px,
+      oklch(0 0 0 / 14%) 3px,
+      oklch(0 0 0 / 0%) 4px
+    );
+    pointer-events: none; mix-blend-mode: overlay; opacity: 0.55;
+    z-index: 3;
+  }
+
+  /* Letterbox bars — top + bottom cinema bars. Sit BEHIND nav (z-50) so logo isn't clipped. */
+  .letterbox::before, .letterbox::after {
+    content: ""; position: fixed; left: 0; right: 0;
+    height: 28px; background: #000;
+    z-index: 45; pointer-events: none;
+  }
+  .letterbox::before { top: 0; box-shadow: 0 1px 0 oklch(1 0 0 / 6%); }
+  .letterbox::after  { bottom: 0; box-shadow: 0 -1px 0 oklch(1 0 0 / 6%); }
+  @media (max-width: 768px) {
+    .letterbox::before, .letterbox::after { height: 18px; }
+  }
+
+  /* Light leak — warm flare drifting across the page */
+  .light-leak {
+    position: fixed; inset: -20%;
+    background:
+      radial-gradient(circle at 15% 20%, oklch(0.62 0.26 25 / 12%), transparent 35%),
+      radial-gradient(circle at 85% 80%, oklch(0.52 0.22 25 / 10%), transparent 45%),
+      radial-gradient(circle at 50% 50%, oklch(0.94 0.08 60 / 4%), transparent 60%);
+    pointer-events: none; z-index: 55; mix-blend-mode: screen;
+    animation: leakDrift 18s ease-in-out infinite alternate;
+  }
+
+  /* REC pulse */
+  .rec-dot { width: 10px; height: 10px; border-radius: 999px; background: var(--blood); box-shadow: 0 0 12px var(--blood-glow); animation: recPulse 1.4s ease-in-out infinite; }
 }
+
+@keyframes leakDrift {
+  0%   { transform: translate3d(-2%, -1%, 0) rotate(0deg); opacity: 0.7; }
+  100% { transform: translate3d(2%, 1%, 0) rotate(2deg); opacity: 1; }
+}
+@keyframes recPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 14px var(--blood-glow); }
+  50%      { opacity: 0.35; box-shadow: 0 0 4px var(--blood-glow); }
 
 @keyframes kenBurns {
   from { transform: scale(1.04) translate(0,0); }
