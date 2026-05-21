@@ -19,7 +19,6 @@ import testimony from "@/assets/upload-testimony.jpeg";
 import news from "@/assets/upload-news.jpeg";
 import comments from "@/assets/upload-comments.jpeg";
 import protestSign from "@/assets/upload-protest-sign.jpeg";
-import { useEffect, useState } from "react";
 import { useGlobalParallax } from "@/hooks/useGlobalParallax";
 
 export const Route = createFileRoute("/")({
@@ -41,24 +40,13 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-function useParallax() {
-  const [y, setY] = useState(0);
-  useEffect(() => {
-    const onScroll = () => setY(window.scrollY);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  return y;
-}
-
 function Index() {
-  const y = useParallax();
   useGlobalParallax();
   return (
     <div id="top" className="relative overflow-x-hidden letterbox scene-3d">
       <DocHUD />
       <Nav />
-      <Hero y={y} />
+      <Hero />
       <Ticker />
       <Story />
       <Timeline />
@@ -72,13 +60,14 @@ function Index() {
   );
 }
 
-function Hero({ y }: { y: number }) {
+function Hero() {
   return (
     <section className="relative min-h-screen w-full overflow-hidden grain vignette scanlines scene-3d">
       {/* Atmospheric backdrop — heavily darkened so it never competes with text. 3D parallax. */}
       <div
         className="absolute inset-0 z-0 will-3d"
-        style={{ transform: `translate3d(0, ${y * 0.22}px, -200px) scale(1.15)` }}
+        data-parallax="0.09"
+        data-parallax-z="-120"
       >
         <img src={hero} alt="" className="w-full h-[120vh] object-cover object-[80%_25%] blur-sm opacity-30" />
       </div>
@@ -87,7 +76,7 @@ function Hero({ y }: { y: number }) {
 
       <div
         className="relative z-10 max-w-7xl mx-auto px-5 md:px-10 pt-28 md:pt-32 pb-32 md:pb-24 w-full min-h-screen flex items-center will-3d"
-        style={{ transform: `translate3d(0, ${-y * 0.08}px, 0)` }}
+        data-parallax="-0.035"
       >
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center w-full">
           {/* TEXT — left 7 cols, fully clear */}
@@ -136,7 +125,9 @@ function Hero({ y }: { y: number }) {
             <Reveal delay={2}>
               <div
                 className="relative will-3d"
-                style={{ transform: `perspective(1200px) rotateY(${Math.min(y * 0.01, 6)}deg) rotateX(${Math.min(-y * 0.005, -2)}deg) translateZ(40px)` }}
+                data-parallax="0.035"
+                data-parallax-tilt="4"
+                data-parallax-z="40"
               >
                 {/* Corner ticks */}
                 <div className="absolute -top-3 -left-3 w-6 h-px bg-blood z-20" />
