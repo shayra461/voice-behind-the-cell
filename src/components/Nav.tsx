@@ -23,7 +23,7 @@ export function Nav() {
     <>
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-background/85 backdrop-blur-xl border-b border-border/60" : "bg-transparent"
+          scrolled ? "bg-background/95 border-b border-border/60 shadow-[0_12px_32px_-24px_oklch(0_0_0_/_85%)]" : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 md:px-10 h-20 md:h-24 flex items-center justify-between">
@@ -50,7 +50,7 @@ export function Nav() {
           </button>
         </div>
         {open && (
-          <div className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-border/60">
+          <div className="lg:hidden bg-background/98 border-t border-border/60 shadow-[0_18px_40px_-30px_oklch(0_0_0_/_85%)]">
             <div className="px-6 py-6 flex flex-col gap-5">
               {items.map((i) => (
                 <a key={i.href} href={i.href} onClick={() => setOpen(false)} className="text-sm uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground">{i.label}</a>

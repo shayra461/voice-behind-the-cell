@@ -39,7 +39,7 @@ export function DocHUD() {
       </div>
 
       {/* REC indicator — top-right under nav */}
-      <div className="hidden md:flex pointer-events-none fixed top-7 right-8 z-[59] items-center gap-2.5 px-3 py-1.5 bg-background/55 backdrop-blur border border-bone/15">
+      <div className="hidden md:flex pointer-events-none fixed top-7 right-8 z-[59] items-center gap-2.5 px-3 py-1.5 bg-background/85 border border-bone/15 shadow-[0_10px_26px_-18px_oklch(0_0_0_/_90%)]">
         <span className="rec-dot" />
         <span className="text-[10px] uppercase tracking-[0.32em] font-bold text-bone">REC</span>
         <span className="text-[10px] tracking-[0.18em] text-bone/70 tabular-nums">{tc}</span>

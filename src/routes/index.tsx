@@ -138,7 +138,7 @@ function Hero() {
                 <div className="relative aspect-[5/4] overflow-hidden grain border border-border/70 shadow-[var(--shadow-cinematic)] bg-background">
                   <img src={hero} alt="A grieving mother holding a phone with her son's photograph" className="w-full h-full object-contain object-center" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
-                  <div className="absolute top-4 left-4 px-3 py-1.5 border border-blood/70 bg-background/60 backdrop-blur text-[9px] uppercase tracking-[0.32em] text-blood font-bold">
+                  <div className="absolute top-4 left-4 px-3 py-1.5 border border-blood/70 bg-background/80 text-[9px] uppercase tracking-[0.32em] text-blood font-bold shadow-[0_2px_18px_oklch(0_0_0_/_45%)]">
                     Case File · 07.20.2020
                   </div>
                   <div className="absolute bottom-5 left-5 right-5">
@@ -210,7 +210,7 @@ function Story() {
               <div className="absolute bottom-5 right-5 h-8 w-px bg-blood" />
 
               {/* Case-file tag */}
-              <div className="absolute top-5 right-5 px-3 py-1.5 border border-blood/70 bg-background/70 backdrop-blur text-[9px] uppercase tracking-[0.32em] text-blood font-bold">
+              <div className="absolute top-5 right-5 px-3 py-1.5 border border-blood/70 bg-background/85 text-[9px] uppercase tracking-[0.32em] text-blood font-bold shadow-[0_2px_18px_oklch(0_0_0_/_45%)]">
                 Frame 014 · Public Protest
               </div>
 
@@ -453,7 +453,7 @@ function Issue() {
         <div className="mt-20 grid md:grid-cols-2 gap-8 md:gap-10">
           {failures.map((f, i) => (
             <Reveal key={i} delay={(i % 3) as 0 | 1 | 2}>
-              <article className="relative p-8 md:p-10 border-l-2 border-blood bg-background/60 backdrop-blur">
+              <article className="relative p-8 md:p-10 border-l-2 border-blood bg-background/80 shadow-[0_18px_50px_-32px_oklch(0_0_0_/_80%)]">
                 <div className="font-display uppercase text-2xl md:text-3xl text-bone mb-3">{f.t}</div>
                 <div className="text-foreground/75 leading-relaxed">{f.b}</div>
               </article>
@@ -560,7 +560,7 @@ function Action() {
           </div>
         </Reveal>
         <Reveal delay={3}>
-          <div className="mt-16 inline-flex items-center gap-8 px-8 py-5 border border-border/60 bg-background/70 backdrop-blur">
+          <div className="mt-16 inline-flex items-center gap-8 px-8 py-5 border border-border/60 bg-background/85 shadow-[0_18px_50px_-32px_oklch(0_0_0_/_80%)]">
             <div>
               <div className="font-display text-4xl text-blood leading-none">14,287</div>
               <div className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground mt-1">Supporters</div>

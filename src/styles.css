@@ -84,7 +84,7 @@
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     background-image: var(--grad-cinematic);
-    background-attachment: fixed;
+    overscroll-behavior-y: none;
   }
   ::selection { background: var(--blood); color: white; }
 }
@@ -175,12 +175,19 @@
       radial-gradient(circle at 15% 20%, oklch(0.62 0.26 25 / 12%), transparent 35%),
       radial-gradient(circle at 85% 80%, oklch(0.52 0.22 25 / 10%), transparent 45%),
       radial-gradient(circle at 50% 50%, oklch(0.94 0.08 60 / 4%), transparent 60%);
-    pointer-events: none; z-index: 55; mix-blend-mode: screen;
+    pointer-events: none; z-index: 55; mix-blend-mode: screen; will-change: transform, opacity;
     animation: leakDrift 18s ease-in-out infinite alternate;
   }
 
   /* REC pulse */
   .rec-dot { width: 10px; height: 10px; border-radius: 999px; background: var(--blood); box-shadow: 0 0 12px var(--blood-glow); animation: recPulse 1.4s ease-in-out infinite; }
+
+  @media (max-width: 768px) {
+    .ken-burns { animation: none; }
+    .grain::after { opacity: 0.1; }
+    .scanlines::after { opacity: 0.28; }
+    .light-leak { display: none; }
+  }
 }
 
 @keyframes leakDrift {
