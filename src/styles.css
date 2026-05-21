@@ -190,6 +190,8 @@
 @keyframes recPulse {
   0%, 100% { opacity: 1; box-shadow: 0 0 14px var(--blood-glow); }
   50%      { opacity: 0.35; box-shadow: 0 0 4px var(--blood-glow); }
+}
+
 
 @keyframes kenBurns {
   from { transform: scale(1.04) translate(0,0); }
