@@ -26,9 +26,9 @@ export function Nav() {
           scrolled ? "bg-background/85 backdrop-blur-xl border-b border-border/60" : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-5 md:px-10 h-16 md:h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-5 md:px-10 h-20 md:h-24 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-3 group">
-            <img src={logo} alt="Voices Behind The Cell" className="h-8 md:h-10 w-auto" />
+            <img src={logo} alt="Voices Behind The Cell" className="h-14 md:h-20 w-auto" />
           </a>
           <nav className="hidden lg:flex items-center gap-9">
             {items.map((i) => (
