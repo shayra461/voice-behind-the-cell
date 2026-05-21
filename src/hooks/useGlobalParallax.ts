@@ -60,8 +60,9 @@ export function useGlobalParallax() {
         const rx = -progress * (tilt * 0.4);
         const sc = 1 + Math.abs(progress) * -scale;
 
+        const needs3d = tilt !== 0 || z !== 0;
         el.style.transform =
-          (z ? `perspective(1400px) ` : "") +
+          (needs3d ? `perspective(1400px) ` : "") +
           `translate3d(0, ${ty.toFixed(2)}px, ${z}px) ` +
           `rotateY(${ry.toFixed(2)}deg) rotateX(${rx.toFixed(2)}deg) ` +
           `scale(${sc.toFixed(4)})`;
