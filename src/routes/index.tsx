@@ -132,7 +132,10 @@ function Hero({ y }: { y: number }) {
           {/* PORTRAIT — right 5 cols, fully visible inside its own cinematic frame */}
           <div className="lg:col-span-5 relative">
             <Reveal delay={2}>
-              <div className="relative">
+              <div
+                className="relative will-3d"
+                style={{ transform: `perspective(1200px) rotateY(${Math.min(y * 0.01, 6)}deg) rotateX(${Math.min(-y * 0.005, -2)}deg) translateZ(40px)` }}
+              >
                 {/* Corner ticks */}
                 <div className="absolute -top-3 -left-3 w-6 h-px bg-blood z-20" />
                 <div className="absolute -top-3 -left-3 w-px h-6 bg-blood z-20" />
