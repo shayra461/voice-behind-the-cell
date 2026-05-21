@@ -561,7 +561,7 @@ function Footer() {
         <div className="md:col-span-3">
           <div className="tag-eyebrow mb-5">Navigate</div>
           <ul className="space-y-3 text-sm">
-            {[["#story","His Story"],["#timeline","Timeline"],["#awareness","Awareness"],["#issue","The Issue"],["#action","Take Action"]].map(([h,l]) => (
+            {[["#story","His Story"],["#timeline","Timeline"],["#awareness","Awareness"],["#issue","The Issue"],["#evidence","Evidence"],["#action","Take Action"]].map(([h,l]) => (
               <li key={h}><a href={h} className="text-foreground/80 hover:text-blood transition">{l}</a></li>
             ))}
           </ul>
