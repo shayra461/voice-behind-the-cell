@@ -36,11 +36,9 @@ export function ScrollScene({
       const dist = Math.abs(clamped - 0.5);
       const scale = 1 - dist * 0.18 * intensity;
       const opacity = 1 - dist * 0.55 * intensity;
-      const blur = dist * 3 * intensity;
 
       el.style.transform = `scale(${scale.toFixed(3)})`;
-      el.style.opacity = `${Math.max(0.25, opacity).toFixed(3)}`;
-      el.style.filter = `blur(${Math.max(0, blur).toFixed(2)}px)`;
+      el.style.opacity = `${Math.max(0.35, opacity).toFixed(3)}`;
     };
 
     const onScroll = () => {
@@ -63,9 +61,9 @@ export function ScrollScene({
       ref={ref}
       className={className}
       style={{
-        willChange: "transform, opacity, filter",
+        willChange: "transform, opacity",
         transformOrigin: "center center",
-        transition: "transform 120ms linear, opacity 120ms linear, filter 120ms linear",
+        transition: "transform 120ms linear, opacity 120ms linear",
       }}
     >
       {children}

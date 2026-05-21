@@ -92,7 +92,7 @@ function Hero({ y }: { y: number }) {
             <Reveal delay={1}>
               <h1 className="font-display uppercase text-[clamp(3rem,8.4vw,8rem)] leading-[0.85] tracking-tight text-bone">
                 Justice<br />
-                <span className="text-blood">Behind</span><br />
+                <span className="text-shimmer animate-flicker">Behind</span><br />
                 The Cell.
               </h1>
             </Reveal>
@@ -109,10 +109,10 @@ function Hero({ y }: { y: number }) {
             </Reveal>
             <Reveal delay={3}>
               <div className="mt-10 flex flex-wrap gap-4">
-                <a href="#action" className="group inline-flex items-center gap-3 bg-blood text-primary-foreground px-7 py-4 text-xs uppercase tracking-[0.28em] font-bold hover:brightness-110 transition glow-blood">
+                <a href="#action" className="sweep group inline-flex items-center gap-3 bg-blood text-primary-foreground px-7 py-4 text-xs uppercase tracking-[0.28em] font-bold hover:brightness-110 transition glow-blood">
                   <span className="size-2 rounded-full bg-white animate-pulse" /> Sign the Petition
                 </a>
-                <a href="#timeline" className="inline-flex items-center gap-3 border border-border/80 text-foreground px-7 py-4 text-xs uppercase tracking-[0.28em] font-semibold hover:bg-foreground/5 transition">
+                <a href="#timeline" className="sweep inline-flex items-center gap-3 border border-border/80 text-foreground px-7 py-4 text-xs uppercase tracking-[0.28em] font-semibold hover:bg-foreground/5 transition">
                   Demand Investigation
                 </a>
                 <a href="#story" className="inline-flex items-center gap-3 text-foreground/80 px-2 py-4 text-xs uppercase tracking-[0.28em] font-semibold hover:text-blood transition">
@@ -132,7 +132,7 @@ function Hero({ y }: { y: number }) {
                 <div className="absolute -bottom-3 -right-3 w-6 h-px bg-blood z-20" />
                 <div className="absolute -bottom-3 -right-3 w-px h-6 bg-blood z-20" />
 
-                <div className="relative aspect-[5/4] overflow-hidden grain border border-border/70 shadow-[var(--shadow-cinematic)] bg-background">
+                <div className="relative aspect-[5/4] overflow-hidden grain border border-border/70 shadow-[var(--shadow-cinematic)] bg-background hover-tilt animate-breathe">
                   <img src={hero} alt="A grieving mother holding a phone with her son's photograph" className="w-full h-full object-contain object-center" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
                   <div className="absolute top-4 left-4 px-3 py-1.5 border border-blood/70 bg-background/60 backdrop-blur text-[9px] uppercase tracking-[0.32em] text-blood font-bold">
