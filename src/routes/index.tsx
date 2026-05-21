@@ -181,21 +181,66 @@ function Ticker() {
 
 function Story() {
   return (
-    <section id="story" className="relative py-24 md:py-40 px-6 md:px-10">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        <Reveal>
-          <div className="relative aspect-[5/4] overflow-hidden grain shadow-[var(--shadow-cinematic)]">
-            <img src={hero} alt="A grieving mother holding a phone with a photograph of her son" className="w-full h-full object-cover object-center" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6">
-              <div className="text-[10px] uppercase tracking-[0.32em] text-blood font-bold mb-2">A Mother's Memory</div>
-              <div className="font-editorial italic text-foreground/95 text-lg leading-snug">"Forever Behind The Cell · July 20, 2020"</div>
+    <section id="story" className="relative py-24 md:py-40 px-6 md:px-10 overflow-hidden">
+      {/* Atmospheric ghosted backdrop for gravity */}
+      <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
+        <img src={protestSign} alt="" className="w-full h-full object-cover blur-2xl" />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        {/* LEFT — dramatic protest diptych */}
+        <Reveal className="lg:col-span-7">
+          <div className="relative">
+            {/* Outer protest sign — the dominant, dramatic frame */}
+            <div className="relative aspect-[4/3] overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)] bg-background">
+              <img src={protestSign} alt="A mother holding a sign reading 'It is time to change jail policies' beside a photograph of her son" className="w-full h-full object-cover object-center ken-burns" />
+              {/* Cinematic vignette — darker at edges, lets the sign breathe in the center */}
+              <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/15 to-background/40" />
+              <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-transparent to-background/30" />
+
+              {/* Corner ticks */}
+              <div className="absolute top-5 left-5 w-8 h-px bg-blood" />
+              <div className="absolute top-5 left-5 h-8 w-px bg-blood" />
+              <div className="absolute bottom-5 right-5 w-8 h-px bg-blood" />
+              <div className="absolute bottom-5 right-5 h-8 w-px bg-blood" />
+
+              {/* Case-file tag */}
+              <div className="absolute top-5 right-5 px-3 py-1.5 border border-blood/70 bg-background/70 backdrop-blur text-[9px] uppercase tracking-[0.32em] text-blood font-bold">
+                Frame 014 · Public Protest
+              </div>
+
+              {/* Caption */}
+              <div className="absolute bottom-6 left-6 right-6 md:right-1/3">
+                <div className="text-[10px] uppercase tracking-[0.32em] text-blood font-bold mb-2">In Her Own Hands</div>
+                <div className="font-editorial italic text-bone text-lg md:text-xl leading-snug">
+                  "It is time to change jail policies." — a mother, holding her son's face
+                  beside her demand.
+                </div>
+              </div>
             </div>
-            <div className="absolute top-6 left-6 w-10 h-px bg-blood" />
-            <div className="absolute top-6 left-6 h-10 w-px bg-blood" />
+
+            {/* Inset memorial portrait — smaller, anchored bottom-right, off the grid */}
+            <div className="hidden md:block absolute -bottom-10 -right-6 lg:-right-12 w-48 lg:w-60 aspect-[4/5] overflow-hidden grain border border-border/70 shadow-[var(--shadow-cinematic)] bg-background">
+              <img src={hero} alt="A grieving mother holding her son's photograph" className="w-full h-full object-cover object-[60%_center]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
+              <div className="absolute bottom-3 left-3 right-3">
+                <div className="text-[8px] uppercase tracking-[0.3em] text-blood font-bold mb-1">A Mother's Memory</div>
+                <div className="font-editorial italic text-bone text-[11px] leading-snug">Forever Behind The Cell · 07.20.2020</div>
+              </div>
+            </div>
+
+            {/* Side meta rail */}
+            <div className="hidden lg:flex absolute -left-10 top-0 bottom-0 flex-col justify-between items-center">
+              <span className="size-2 rounded-full bg-blood glow-blood" />
+              <span className="text-[9px] uppercase tracking-[0.4em] text-muted-foreground" style={{ writingMode: "vertical-rl" }}>His Story · Chapter One</span>
+              <span className="size-2 rounded-full bg-blood/40" />
+            </div>
           </div>
         </Reveal>
-        <div>
+
+        {/* RIGHT — text column */}
+        <div className="lg:col-span-5">
           <Reveal>
             <div className="flex items-center gap-4 mb-6">
               <div className="relative w-14 h-14 shrink-0 overflow-hidden border border-border/70 bg-background/60">
