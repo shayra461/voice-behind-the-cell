@@ -483,7 +483,7 @@ function Footer() {
     <footer className="relative border-t border-border/60 bg-background/95 pt-20 pb-28 md:pb-12 px-6 md:px-10">
       <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-10">
         <div className="md:col-span-5">
-          <img src="/src/assets/logo.svg" alt="Voices Behind The Cell" className="h-12 w-auto opacity-90 mb-6" />
+          <img src={logo} alt="Voices Behind The Cell" className="h-12 w-auto opacity-90 mb-6" />
           <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
             Voices Behind The Cell is a community-led campaign demanding transparency,
             justice, and reform for every life lost in Bexar County custody.
