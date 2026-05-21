@@ -152,24 +152,24 @@ function Story() {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <Reveal>
           <div className="relative aspect-[3/4] overflow-hidden grain shadow-[var(--shadow-cinematic)]">
-            <img src={hero} alt="Portrait of a mother holding her son's photograph" className="w-full h-full object-cover ken-burns" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+            <img src={hero} alt="Portrait of a mother holding her son's photograph" className="w-full h-full object-cover object-center ken-burns" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
               <div className="text-[10px] uppercase tracking-[0.32em] text-blood font-bold mb-2">A Mother's Memory</div>
-              <div className="font-editorial italic text-foreground/90 text-lg leading-snug">"Forever Behind The Cell · July 20, 2020"</div>
+              <div className="font-editorial italic text-foreground/95 text-lg leading-snug">"Forever Behind The Cell · July 20, 2020"</div>
             </div>
             <div className="absolute top-6 left-6 w-10 h-px bg-blood" />
             <div className="absolute top-6 left-6 h-10 w-px bg-blood" />
-            <div className="absolute -bottom-8 -right-6 md:-right-10 w-32 md:w-44 aspect-square overflow-hidden border border-border/70 bg-background shadow-[var(--shadow-cinematic)] rotate-[3deg] hidden sm:block">
-              <img src={emblem} alt="Voices Behind The Cell emblem" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-background/20 mix-blend-multiply" />
-            </div>
           </div>
         </Reveal>
         <div>
           <Reveal>
-            <div className="flex items-center gap-3 mb-6">
-              <span className="h-px w-10 bg-blood" />
+            <div className="flex items-center gap-4 mb-6">
+              <div className="relative w-14 h-14 shrink-0 overflow-hidden border border-border/70 bg-background/60">
+                <img src={emblem} alt="Voices Behind The Cell emblem" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-background/20 mix-blend-multiply" />
+              </div>
+              <span className="h-px w-8 bg-blood" />
               <span className="tag-eyebrow">His Story</span>
             </div>
           </Reveal>
