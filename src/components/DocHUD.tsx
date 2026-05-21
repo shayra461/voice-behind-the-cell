@@ -13,10 +13,18 @@ export function DocHUD() {
     let raf = 0;
     const tick = () => {
       const elapsed = (performance.now() - start) / 1000;
-      const h = Math.floor(elapsed / 3600).toString().padStart(2, "0");
-      const m = Math.floor((elapsed % 3600) / 60).toString().padStart(2, "0");
-      const s = Math.floor(elapsed % 60).toString().padStart(2, "0");
-      const f = Math.floor((elapsed * 24) % 24).toString().padStart(2, "0");
+      const h = Math.floor(elapsed / 3600)
+        .toString()
+        .padStart(2, "0");
+      const m = Math.floor((elapsed % 3600) / 60)
+        .toString()
+        .padStart(2, "0");
+      const s = Math.floor(elapsed % 60)
+        .toString()
+        .padStart(2, "0");
+      const f = Math.floor((elapsed * 24) % 24)
+        .toString()
+        .padStart(2, "0");
       setTc(`${h}:${m}:${s}:${f}`);
       raf = requestAnimationFrame(tick);
     };

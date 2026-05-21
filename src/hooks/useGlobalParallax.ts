@@ -22,12 +22,8 @@ export function useGlobalParallax() {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return;
 
-    const parallaxNodes = Array.from(
-      document.querySelectorAll<HTMLElement>("[data-parallax]")
-    );
-    const sectionNodes = Array.from(
-      document.querySelectorAll<HTMLElement>("[data-depth-section]")
-    );
+    const parallaxNodes = Array.from(document.querySelectorAll<HTMLElement>("[data-parallax]"));
+    const sectionNodes = Array.from(document.querySelectorAll<HTMLElement>("[data-depth-section]"));
     if (!parallaxNodes.length && !sectionNodes.length) return;
 
     const visible = new Set<HTMLElement>();
@@ -53,7 +49,7 @@ export function useGlobalParallax() {
           else visible.delete(el);
         }
       },
-      { rootMargin: "30% 0px 30% 0px" }
+      { rootMargin: "30% 0px 30% 0px" },
     );
 
     [...parallaxNodes, ...sectionNodes].forEach((n) => {
@@ -85,10 +81,7 @@ export function useGlobalParallax() {
         // ── Depth-section warp ─────────────────────────────────
         if (el.hasAttribute("data-depth-section")) {
           // progress: -1 (below, about to enter) … 0 (centered) … 1 (above, leaving)
-          const progress = Math.max(
-            -1.2,
-            Math.min(1.2, (centerY - elCenter) / vh)
-          );
+          const progress = Math.max(-1.2, Math.min(1.2, (centerY - elCenter) / vh));
           const abs = Math.abs(progress);
 
           // Coming in from depth (progress < 0): translateZ negative → pull forward as it nears center
@@ -102,7 +95,7 @@ export function useGlobalParallax() {
           writeIfChanged(
             el,
             `perspective(1800px) translate3d(0, ${ty.toFixed(2)}px, ${tz.toFixed(2)}px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg)`,
-            opacity.toFixed(3)
+            opacity.toFixed(3),
           );
           return;
         }
@@ -122,7 +115,7 @@ export function useGlobalParallax() {
         const needs3d = tilt !== 0 || z !== 0;
         writeIfChanged(
           el,
-          `${needs3d ? "perspective(1400px) " : ""}translate3d(0, ${ty.toFixed(2)}px, ${z.toFixed(2)}px) rotateY(${ry.toFixed(2)}deg) rotateX(${rx.toFixed(2)}deg) scale(${sc.toFixed(4)})`
+          `${needs3d ? "perspective(1400px) " : ""}translate3d(0, ${ty.toFixed(2)}px, ${z.toFixed(2)}px) rotateY(${ry.toFixed(2)}deg) rotateX(${rx.toFixed(2)}deg) scale(${sc.toFixed(4)})`,
         );
       });
     };
