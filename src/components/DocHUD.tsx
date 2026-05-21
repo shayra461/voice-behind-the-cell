@@ -9,7 +9,7 @@ export function DocHUD() {
   const [tc, setTc] = useState("00:00:00:00");
 
   useEffect(() => {
-    const start = Date.now();
+    const start = performance.now();
     const tick = () => {
       const elapsed = (performance.now() - start) / 1000;
       const h = Math.floor(elapsed / 3600)
