@@ -160,6 +160,10 @@ function Story() {
             </div>
             <div className="absolute top-6 left-6 w-10 h-px bg-blood" />
             <div className="absolute top-6 left-6 h-10 w-px bg-blood" />
+            <div className="absolute -bottom-8 -right-6 md:-right-10 w-32 md:w-44 aspect-square overflow-hidden border border-border/70 bg-background shadow-[var(--shadow-cinematic)] rotate-[3deg] hidden sm:block">
+              <img src={emblem} alt="Voices Behind The Cell emblem" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-background/20 mix-blend-multiply" />
+            </div>
           </div>
         </Reveal>
         <div>
