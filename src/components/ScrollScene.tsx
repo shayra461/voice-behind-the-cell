@@ -1,10 +1,10 @@
 import { useEffect, useRef, type ReactNode } from "react";
 
 /**
- * Wraps a section and applies a cinematic scroll-driven zoom + fade.
- * As the section enters the viewport it scales up from 0.9 → 1 and fades in,
- * then as it leaves it gently scales down to 0.95 and dims — like a camera
- * passing through a scene.
+ * Cinematic scroll reveal:
+ * - When a section enters the viewport it eases in (translateY + slight scale + fade).
+ * - Once revealed it stays fully visible and crisp — no shrinking or dimming as it leaves.
+ * - While in view, a gentle parallax drift adds depth without hiding content.
  */
 export function ScrollScene({
   children,
@@ -17,39 +17,48 @@ export function ScrollScene({
   intensity?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
+  const revealedRef = useRef(false);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
+    const outer = ref.current;
+    const inner = innerRef.current;
+    if (!outer || !inner) return;
 
+    // Reveal once on enter
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !revealedRef.current) {
+          revealedRef.current = true;
+          outer.dataset.revealed = "true";
+        }
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+    io.observe(outer);
+
+    // Gentle parallax drift while in view
     let raf = 0;
     const update = () => {
       raf = 0;
-      const rect = el.getBoundingClientRect();
+      const rect = outer.getBoundingClientRect();
       const vh = window.innerHeight || 1;
-      // progress: 0 when element just entering from bottom, 0.5 centered, 1 leaving top
-      const center = rect.top + rect.height / 2;
-      const p = 1 - center / vh; // ~ -0.5..1.5
-      const clamped = Math.max(-0.4, Math.min(1.4, p));
-
-      // bell-curve scale: peaks at 1 when centered
-      const dist = Math.abs(clamped - 0.5);
-      const scale = 1 - dist * 0.18 * intensity;
-      const opacity = 1 - dist * 0.55 * intensity;
-
-      el.style.transform = `scale(${scale.toFixed(3)})`;
-      el.style.opacity = `${Math.max(0.35, opacity).toFixed(3)}`;
+      // -1 (below) .. 0 (centered) .. 1 (above)
+      const p = (rect.top + rect.height / 2 - vh / 2) / vh;
+      const clamped = Math.max(-1, Math.min(1, p));
+      const shift = -clamped * 14 * intensity; // px
+      inner.style.setProperty("--drift", `${shift.toFixed(2)}px`);
     };
-
     const onScroll = () => {
       if (raf) return;
       raf = requestAnimationFrame(update);
     };
-
     update();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
+
     return () => {
+      io.disconnect();
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
       if (raf) cancelAnimationFrame(raf);
@@ -57,16 +66,10 @@ export function ScrollScene({
   }, [intensity]);
 
   return (
-    <div
-      ref={ref}
-      className={className}
-      style={{
-        willChange: "transform, opacity",
-        transformOrigin: "center center",
-        transition: "transform 120ms linear, opacity 120ms linear",
-      }}
-    >
-      {children}
+    <div ref={ref} className={`scroll-scene ${className}`} data-revealed="false">
+      <div ref={innerRef} className="scroll-scene-inner">
+        {children}
+      </div>
     </div>
   );
 }
