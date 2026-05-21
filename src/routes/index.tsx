@@ -194,7 +194,7 @@ function Ticker() {
 
 function Story() {
   return (
-    <section id="story" className="relative py-24 md:py-40 px-6 md:px-10 overflow-hidden">
+    <section id="story" data-depth-section className="relative py-24 md:py-40 px-6 md:px-10 overflow-hidden">
       {/* Atmospheric ghosted backdrop for gravity */}
       <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
         <img src={protestSign} alt="" className="w-full h-full object-cover blur-2xl" />
@@ -312,7 +312,7 @@ const events = [
 
 function Timeline() {
   return (
-    <section id="timeline" className="relative py-24 md:py-40 px-6 md:px-10 bg-ash/60 grain">
+    <section id="timeline" data-depth-section className="relative py-24 md:py-40 px-6 md:px-10 bg-ash/60 grain">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background pointer-events-none" />
       <div className="relative max-w-6xl mx-auto">
         <Reveal>
@@ -371,7 +371,7 @@ function Awareness() {
     { src: flyer, label: "Silent Protest & Memorial", cls: "aspect-[3/4]" },
   ];
   return (
-    <section id="awareness" className="relative py-24 md:py-40 px-6 md:px-10">
+    <section id="awareness" data-depth-section className="relative py-24 md:py-40 px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
           <div>
@@ -427,7 +427,7 @@ function Issue() {
     { t: "No Accountability", b: "Officers and officials face no public consequences. Patterns repeat. Families bury more children." },
   ];
   return (
-    <section id="issue" className="relative py-24 md:py-40 px-6 md:px-10 bg-ash grain vignette overflow-hidden">
+    <section id="issue" data-depth-section className="relative py-24 md:py-40 px-6 md:px-10 bg-ash grain vignette overflow-hidden">
       <div className="relative max-w-7xl mx-auto">
         <Reveal>
           <div className="flex items-center gap-3 mb-6">
@@ -476,7 +476,7 @@ function Issue() {
 
 function Evidence() {
   return (
-    <section id="evidence" className="relative py-24 md:py-36 px-6 md:px-10 overflow-hidden">
+    <section id="evidence" data-depth-section className="relative py-24 md:py-36 px-6 md:px-10 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <Reveal>
           <div className="flex items-center gap-3 mb-6">
@@ -529,7 +529,7 @@ function Evidence() {
 
 function Action() {
   return (
-    <section id="action" className="relative py-28 md:py-44 px-6 md:px-10 overflow-hidden grain vignette">
+    <section id="action" data-depth-section className="relative py-28 md:py-44 px-6 md:px-10 overflow-hidden grain vignette">
       <div className="absolute inset-0" data-parallax="0.18" data-parallax-scale="-0.08">
         <img src={jail} alt="" className="w-full h-[120%] object-cover ken-burns" />
 
@@ -590,7 +590,7 @@ function Action() {
 
 function Involved() {
   return (
-    <section id="involved" className="relative py-24 md:py-40 px-6 md:px-10">
+    <section id="involved" data-depth-section className="relative py-24 md:py-40 px-6 md:px-10">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
         <div className="lg:col-span-2 relative">
           <Reveal>
