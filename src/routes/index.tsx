@@ -53,6 +53,7 @@ function useParallax() {
 
 function Index() {
   const y = useParallax();
+  useGlobalParallax();
   return (
     <div id="top" className="relative overflow-x-hidden letterbox scene-3d">
       <DocHUD />
