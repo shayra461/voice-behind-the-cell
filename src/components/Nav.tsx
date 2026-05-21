@@ -60,7 +60,7 @@ export function Nav() {
         )}
       </header>
       {/* Mobile sticky CTA */}
-      <a href="#action" className="md:hidden fixed bottom-4 inset-x-4 z-50 bg-blood text-primary-foreground text-center py-4 text-xs uppercase tracking-[0.28em] font-bold shadow-2xl glow-blood">
+      <a href="#action" className="md:hidden fixed bottom-7 inset-x-4 z-[58] bg-blood text-primary-foreground text-center py-4 text-xs uppercase tracking-[0.28em] font-bold shadow-2xl glow-blood">
         Sign the Petition
       </a>
     </>
