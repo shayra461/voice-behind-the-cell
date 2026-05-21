@@ -379,6 +379,59 @@ function Issue() {
   );
 }
 
+function Evidence() {
+  return (
+    <section id="evidence" className="relative py-24 md:py-36 px-6 md:px-10 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <Reveal>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="h-px w-10 bg-blood" />
+            <span className="tag-eyebrow">Voices of the Community</span>
+          </div>
+        </Reveal>
+        <Reveal delay={1}>
+          <h2 className="font-display uppercase text-4xl md:text-6xl leading-[0.9] text-bone max-w-4xl">
+            The proof is in the<br /><span className="text-blood">voices left behind.</span>
+          </h2>
+        </Reveal>
+        <Reveal delay={2}>
+          <p className="mt-6 text-foreground/75 max-w-2xl leading-relaxed">
+            The local press has reported. Families have testified. Neighbors have grieved
+            publicly. The pattern is undeniable — and the record is permanent.
+          </p>
+        </Reveal>
+
+        <div className="mt-16 grid md:grid-cols-12 gap-6">
+          <Reveal className="md:col-span-7">
+            <figure className="relative aspect-[16/11] overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)] group">
+              <img src={news} alt="Local news coverage of custodial cases in San Antonio" className="absolute inset-0 w-full h-full object-cover ken-burns" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+              <figcaption className="absolute bottom-6 left-6 right-6">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-blood font-bold mb-2">In the Press</div>
+                <div className="font-editorial italic text-bone text-xl leading-snug max-w-xl">
+                  Local reporters keep returning to the same courtrooms — and the same families.
+                </div>
+              </figcaption>
+            </figure>
+          </Reveal>
+          <Reveal className="md:col-span-5" delay={1}>
+            <figure className="relative aspect-[3/4] md:aspect-auto md:h-full overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)] group">
+              <img src={comments} alt="Community comments and condolences shared online" className="absolute inset-0 w-full h-full object-cover object-top ken-burns" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+              <figcaption className="absolute bottom-6 left-6 right-6">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-blood font-bold mb-2">Public Outcry</div>
+                <div className="font-editorial italic text-bone text-lg leading-snug">
+                  "I also lost a son in Bexar County Jail." — one of hundreds of public testimonies.
+                </div>
+              </figcaption>
+            </figure>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Action() {
   return (
     <section id="action" className="relative py-28 md:py-44 px-6 md:px-10 overflow-hidden grain vignette">
