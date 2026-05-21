@@ -109,10 +109,10 @@ function Hero({ y }: { y: number }) {
             </Reveal>
             <Reveal delay={3}>
               <div className="mt-10 flex flex-wrap gap-4">
-                <a href="#action" className="group inline-flex items-center gap-3 bg-blood text-primary-foreground px-7 py-4 text-xs uppercase tracking-[0.28em] font-bold hover:brightness-110 transition glow-blood">
+                <a href="#action" className="sweep group inline-flex items-center gap-3 bg-blood text-primary-foreground px-7 py-4 text-xs uppercase tracking-[0.28em] font-bold hover:brightness-110 transition glow-blood">
                   <span className="size-2 rounded-full bg-white animate-pulse" /> Sign the Petition
                 </a>
-                <a href="#timeline" className="inline-flex items-center gap-3 border border-border/80 text-foreground px-7 py-4 text-xs uppercase tracking-[0.28em] font-semibold hover:bg-foreground/5 transition">
+                <a href="#timeline" className="sweep inline-flex items-center gap-3 border border-border/80 text-foreground px-7 py-4 text-xs uppercase tracking-[0.28em] font-semibold hover:bg-foreground/5 transition">
                   Demand Investigation
                 </a>
                 <a href="#story" className="inline-flex items-center gap-3 text-foreground/80 px-2 py-4 text-xs uppercase tracking-[0.28em] font-semibold hover:text-blood transition">
