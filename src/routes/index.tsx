@@ -92,7 +92,7 @@ function Hero({ y }: { y: number }) {
             <Reveal delay={1}>
               <h1 className="font-display uppercase text-[clamp(3rem,8.4vw,8rem)] leading-[0.85] tracking-tight text-bone">
                 Justice<br />
-                <span className="text-blood">Behind</span><br />
+                <span className="text-shimmer animate-flicker">Behind</span><br />
                 The Cell.
               </h1>
             </Reveal>
