@@ -130,8 +130,8 @@ function Hero({ y }: { y: number }) {
                 <div className="absolute -bottom-3 -right-3 w-6 h-px bg-blood z-20" />
                 <div className="absolute -bottom-3 -right-3 w-px h-6 bg-blood z-20" />
 
-                <div className="relative aspect-[5/6] overflow-hidden grain border border-border/70 shadow-[var(--shadow-cinematic)]">
-                  <img src={hero} alt="A grieving mother holding a phone with her son's photograph" className="w-full h-full object-cover object-[62%_center] ken-burns" />
+                <div className="relative aspect-[5/4] overflow-hidden grain border border-border/70 shadow-[var(--shadow-cinematic)] bg-background">
+                  <img src={hero} alt="A grieving mother holding a phone with her son's photograph" className="w-full h-full object-contain object-center" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
                   <div className="absolute top-4 left-4 px-3 py-1.5 border border-blood/70 bg-background/60 backdrop-blur text-[9px] uppercase tracking-[0.32em] text-blood font-bold">
                     Case File · 07.20.2020
