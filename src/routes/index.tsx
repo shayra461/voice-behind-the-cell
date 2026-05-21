@@ -234,7 +234,7 @@ function Story() {
             </div>
 
             {/* Inset memorial portrait — smaller, anchored bottom-right, off the grid */}
-            <div className="hidden md:block absolute -bottom-10 -right-6 lg:-right-12 w-48 lg:w-60 aspect-[4/5] overflow-hidden grain border border-border/70 shadow-[var(--shadow-cinematic)] bg-background">
+            <div className="hidden md:block absolute -bottom-10 -right-6 lg:-right-12 w-48 lg:w-60 aspect-[4/5] overflow-hidden grain border border-border/70 shadow-[var(--shadow-cinematic)] bg-background" data-parallax="0.12" data-parallax-tilt="-8" data-parallax-z="80">
               <img src={hero} alt="A grieving mother holding her son's photograph" className="w-full h-full object-cover object-[60%_center]" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
               <div className="absolute bottom-3 left-3 right-3">
