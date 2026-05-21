@@ -341,7 +341,7 @@ function Timeline() {
                   </div>
                   <div className="hidden md:block w-1/2 px-10">
                     {e.img && (
-                      <div className="relative aspect-[4/3] overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)]">
+                      <div className="relative aspect-[4/3] overflow-hidden grain border border-border/60 shadow-[var(--shadow-cinematic)]" data-parallax="0.08" data-parallax-tilt={i % 2 === 0 ? "5" : "-5"} data-parallax-z="50">
                         <img src={e.img} alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                         <div className="absolute inset-0 bg-background/30 mix-blend-multiply" />
                       </div>
