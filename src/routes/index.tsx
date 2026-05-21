@@ -52,17 +52,17 @@ function useParallax() {
 function Index() {
   const y = useParallax();
   return (
-    <div id="top" className="relative overflow-x-hidden stage-rails">
+    <div id="top" className="relative overflow-x-hidden">
       <Nav />
       <Hero y={y} />
-      <div className="scroll-stage"><Ticker /></div>
-      <div className="scroll-stage"><Story /></div>
-      <div className="scroll-stage"><Timeline /></div>
-      <div className="scroll-stage"><Awareness /></div>
-      <div className="scroll-stage"><Issue /></div>
-      <div className="scroll-stage"><Evidence /></div>
-      <div className="scroll-stage"><Action /></div>
-      <div className="scroll-stage"><Involved /></div>
+      <Ticker />
+      <Story />
+      <Timeline />
+      <Awareness />
+      <Issue />
+      <Evidence />
+      <Action />
+      <Involved />
       <Footer />
     </div>
   );
