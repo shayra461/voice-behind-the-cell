@@ -11,6 +11,12 @@ import vigil from "@/assets/courthouse-vigil.jpeg";
 import circle from "@/assets/community-circle.jpeg";
 import flyer from "@/assets/memorial-flyer.jpeg";
 import logo from "@/assets/logo.svg";
+import emblem from "@/assets/upload-emblem.jpeg";
+import stage from "@/assets/upload-stage.jpeg";
+import familiesBanner from "@/assets/upload-families-banner.jpeg";
+import testimony from "@/assets/upload-testimony.jpeg";
+import news from "@/assets/upload-news.jpeg";
+import comments from "@/assets/upload-comments.jpeg";
 import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
