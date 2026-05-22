@@ -347,16 +347,16 @@ function Timeline() {
 
 function Awareness() {
   const gallery = [
-    { src: courthouse, label: "Courthouse Rally", cls: "md:col-span-2 md:row-span-2 aspect-square" },
-    { src: stage, label: "Speaking Truth Nationally", cls: "aspect-[4/5]" },
-    { src: testimony, label: "Testifying at the Capitol", cls: "aspect-[4/5]" },
-    { src: familiesBanner, label: "Names We Refuse to Forget", cls: "md:col-span-2 aspect-[16/10]" },
-    { src: policies, label: "Change Jail Policies", cls: "aspect-[4/5]" },
-    { src: council, label: "Council Chambers", cls: "aspect-[4/5]" },
-    { src: banner, label: "Families United", cls: "md:col-span-2 aspect-[16/9]" },
-    { src: vigil, label: "Vigil Outside the Courthouse", cls: "aspect-[3/4]" },
-    { src: circle, label: "A Community That Will Not Be Silent", cls: "aspect-[3/4]" },
-    { src: flyer, label: "Silent Protest & Memorial", cls: "aspect-[3/4]" },
+    { src: courthouse, label: "Courthouse Rally" },
+    { src: stage, label: "Speaking Truth Nationally" },
+    { src: testimony, label: "Testifying at the Capitol" },
+    { src: familiesBanner, label: "Names We Refuse to Forget" },
+    { src: policies, label: "Change Jail Policies" },
+    { src: council, label: "Council Chambers" },
+    { src: banner, label: "Families United" },
+    { src: vigil, label: "Vigil Outside the Courthouse" },
+    { src: circle, label: "A Community That Will Not Be Silent" },
+    { src: flyer, label: "Silent Protest & Memorial" },
   ];
   return (
     <section id="awareness" className="relative py-24 md:py-40 px-6 md:px-10">
@@ -383,13 +383,13 @@ function Awareness() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[minmax(140px,auto)]">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
           {gallery.map((g, i) => (
             <Reveal key={i} delay={(i % 3) as 0 | 1 | 2}>
-              <figure className={`group relative overflow-hidden grain border border-border/40 ${g.cls}`}>
+              <figure className="group relative overflow-hidden grain border border-border/40 aspect-[3/4] hover-lift">
                 <img src={g.src} alt={g.label} className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
-                <figcaption className="absolute bottom-4 left-4 right-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
+                <figcaption className="absolute bottom-4 left-4 right-4 z-10">
                   <div className="text-[10px] uppercase tracking-[0.28em] text-blood font-bold mb-1">Movement</div>
                   <div className="font-editorial italic text-bone text-lg leading-tight">{g.label}</div>
                 </figcaption>
