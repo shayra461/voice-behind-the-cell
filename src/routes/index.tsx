@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/Nav";
+import { Footer } from "@/components/Footer";
+import { FinalMessage } from "@/components/FinalMessage";
 import { Reveal } from "@/components/Reveal";
 import { ScrollScene } from "@/components/ScrollScene";
 import hero from "@/assets/hero-portrait.jpeg";
@@ -65,6 +67,7 @@ function Index() {
       <ScrollScene><Evidence /></ScrollScene>
       <ScrollScene><Action /></ScrollScene>
       <ScrollScene><Involved /></ScrollScene>
+      <FinalMessage />
       <Footer />
     </div>
   );
@@ -430,15 +433,15 @@ function Timeline() {
 
 function Awareness() {
   const gallery = [
-    { src: courthouse, label: "Courthouse Rally" },
-    { src: stage, label: "Speaking Truth Nationally" },
+    { src: courthouse, label: "Lydia Speaking Before Officials" },
+    { src: stage, label: "Lydia Speaking Before Officials" },
     { src: testimony, label: "Testifying at the Capitol" },
-    { src: familiesBanner, label: "Names We Refuse to Forget" },
+    { src: familiesBanner, label: "Remember Their Names" },
     { src: policies, label: "Change Jail Policies" },
-    { src: council, label: "Council Chambers" },
+    { src: council, label: "Lydia Speaking Before Officials" },
     { src: banner, label: "Families United" },
-    { src: vigil, label: "Vigil Outside the Courthouse" },
-    { src: circle, label: "A Community That Will Not Be Silent" },
+    { src: vigil, label: "Silent Protest & Memorial" },
+    { src: circle, label: "Families United" },
     { src: flyer, label: "Silent Protest & Memorial" },
   ];
   return (
@@ -708,43 +711,3 @@ function Involved() {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="relative border-t border-border/60 bg-background/95 pt-20 pb-28 md:pb-12 px-6 md:px-10">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-10">
-        <div className="md:col-span-5">
-          <img src={logo} alt="Voices Behind The Cell" className="h-24 md:h-32 w-auto opacity-90 mb-6" />
-          <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
-            Voices Behind The Cell is a community-led campaign demanding transparency,
-            justice, and reform for every life lost in Bexar County custody.
-          </p>
-        </div>
-        <div className="md:col-span-3">
-          <div className="tag-eyebrow mb-5">Navigate</div>
-          <ul className="space-y-3 text-sm">
-            {[["#story","His Story"],["#timeline","Timeline"],["#awareness","Awareness"],["#issue","The Issue"],["#evidence","Evidence"],["#action","Take Action"]].map(([h,l]) => (
-              <li key={h}><a href={h} className="text-foreground/80 hover:text-blood transition">{l}</a></li>
-            ))}
-          </ul>
-        </div>
-        <div className="md:col-span-4">
-          <div className="tag-eyebrow mb-5">Contact</div>
-          <ul className="space-y-3 text-sm text-foreground/80">
-            <li>Lydia Leos · Founder, Voices Behind The Cell</li>
-            <li>Phone · <a href="tel:+12109104817" className="hover:text-blood transition">(210) 910-4817</a></li>
-            <li>Email · <a href="mailto:justice@voicesbehindthecell.org" className="hover:text-blood transition">justice@voicesbehindthecell.org</a></li>
-            <li className="pt-2 flex gap-3">
-              {["Facebook","Instagram","TikTok","YouTube"].map((s) => (
-                <a key={s} href="#" className="text-[10px] uppercase tracking-[0.22em] border border-border/80 px-3 py-2 hover:border-blood hover:text-blood transition">{s}</a>
-              ))}
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-border/60 flex flex-col md:flex-row gap-4 justify-between text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-        <div>© {new Date().getFullYear()} Voices Behind The Cell · All Rights Reserved</div>
-        <div>A Community Justice Campaign · San Antonio, TX</div>
-      </div>
-    </footer>
-  );
-}

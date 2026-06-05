@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/Nav";
+import { Footer } from "@/components/Footer";
+import { FinalMessage } from "@/components/FinalMessage";
 import { Reveal } from "@/components/Reveal";
 
 export const Route = createFileRoute("/know-your-rights")({
@@ -135,6 +137,9 @@ function KnowYourRights() {
           </Link>
         </Reveal>
       </section>
+
+      <FinalMessage />
+      <Footer />
     </div>
   );
 }
