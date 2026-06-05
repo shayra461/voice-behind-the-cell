@@ -48,12 +48,12 @@ function FollowTheRecords() {
           <Reveal>
             <p className="uppercase tracking-[0.3em] text-xs md:text-sm text-foreground/60 mb-6">Transparency Series</p>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal >
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight">
               Follow The <em className="italic text-foreground/80">Records</em>
             </h1>
           </Reveal>
-          <Reveal delay={0.2}>
+          <Reveal >
             <p className="mt-8 max-w-2xl text-lg md:text-xl text-foreground/75 leading-relaxed">
               Every death in custody leaves a paper trail. Understanding which records exist — and who controls them — is the first step toward accountability.
             </p>
@@ -69,7 +69,7 @@ function FollowTheRecords() {
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {records.map((r, i) => (
-              <Reveal key={r.title} delay={i * 0.05}>
+              <Reveal key={r.title} >
                 <article className="group h-full p-7 md:p-9 rounded-2xl border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.05] hover:border-foreground/25 transition-all duration-500">
                   <div className="flex items-baseline gap-4 mb-4">
                     <span className="font-mono text-xs text-foreground/40">{String(i + 1).padStart(2, "0")}</span>
@@ -89,7 +89,7 @@ function FollowTheRecords() {
           <Reveal>
             <h2 className="font-display text-3xl md:text-5xl mb-4">The Chain Of Events</h2>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal >
             <p className="text-foreground/70 mb-12 md:mb-16 max-w-2xl">
               From a routine housing assignment to a family demanding the truth — this is the path every record must travel.
             </p>
@@ -98,7 +98,7 @@ function FollowTheRecords() {
           <div className="flex flex-col items-center gap-0">
             {flow.map((step, i) => (
               <div key={step} className="flex flex-col items-center w-full">
-                <Reveal delay={i * 0.1}>
+                <Reveal >
                   <div className="relative w-full max-w-md">
                     <div className="rounded-xl border-2 border-foreground/20 bg-background px-8 py-6 text-center shadow-lg hover:border-foreground/50 hover:scale-[1.02] transition-all duration-500">
                       <span className="font-mono text-[10px] uppercase tracking-widest text-foreground/40 block mb-2">Step {String(i + 1).padStart(2, "0")}</span>
@@ -107,7 +107,7 @@ function FollowTheRecords() {
                   </div>
                 </Reveal>
                 {i < flow.length - 1 && (
-                  <Reveal delay={i * 0.1 + 0.05}>
+                  <Reveal >
                     <div className="flex flex-col items-center py-4" aria-hidden="true">
                       <div className="w-px h-8 bg-gradient-to-b from-foreground/40 to-foreground/10" />
                       <svg width="16" height="16" viewBox="0 0 16 16" className="text-foreground/50 -mt-1">
@@ -128,7 +128,7 @@ function FollowTheRecords() {
           <Reveal>
             <h2 className="font-display text-3xl md:text-5xl mb-6">Need help requesting records?</h2>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal >
             <p className="text-foreground/75 text-lg mb-2">Lydia Leos — Voices Behind The Cell</p>
             <p className="text-foreground/70">
               <a href="tel:+12109104817" className="underline underline-offset-4 hover:text-foreground">(210) 910-4817</a>
@@ -136,7 +136,7 @@ function FollowTheRecords() {
               <a href="mailto:justice@voicesbehindthecell.org" className="underline underline-offset-4 hover:text-foreground">justice@voicesbehindthecell.org</a>
             </p>
           </Reveal>
-          <Reveal delay={0.2}>
+          <Reveal >
             <Link to="/" className="inline-block mt-10 px-8 py-3 rounded-full border border-foreground/30 hover:bg-foreground hover:text-background transition-colors">
               ← Back to Home
             </Link>
