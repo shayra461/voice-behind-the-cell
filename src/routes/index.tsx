@@ -165,6 +165,44 @@ function Hero({ y }: { y: number }) {
   );
 }
 
+function NeedHelp() {
+  return (
+    <section className="relative border-y border-blood/30 bg-ash/40 grain">
+      <div className="absolute inset-0 bg-gradient-to-r from-blood/5 via-transparent to-blood/5 pointer-events-none" />
+      <div className="relative max-w-7xl mx-auto px-6 md:px-10 py-10 md:py-14">
+        <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-12">
+          <div className="lg:flex-1">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-10 bg-blood" />
+              <span className="tag-eyebrow">Support & Resources</span>
+            </div>
+            <h2 className="font-display uppercase text-2xl md:text-3xl tracking-tight text-bone leading-[1.1]">
+              Need Help After a Death in Custody?
+            </h2>
+            <p className="mt-3 text-muted-foreground text-sm md:text-base max-w-xl leading-relaxed">
+              Families seeking support, advocacy resources, public information guidance, or assistance navigating the aftermath of an in-custody death may contact:
+            </p>
+          </div>
+          <div className="lg:shrink-0 space-y-3">
+            <div className="text-sm text-foreground/90">
+              <span className="font-semibold text-bone">Lydia Leos</span>
+              <span className="text-muted-foreground"> · Voices Behind The Cell</span>
+            </div>
+            <a href="tel:+12109104817" className="flex items-center gap-3 text-foreground/80 hover:text-blood transition magnetic-link">
+              <span className="size-2 rounded-full bg-blood glow-blood" />
+              <span className="font-medium">(210) 910-4817</span>
+            </a>
+            <a href="mailto:justice@voicesbehindthecell.org" className="flex items-center gap-3 text-foreground/80 hover:text-blood transition magnetic-link">
+              <span className="size-2 rounded-full bg-blood/50" />
+              <span className="font-medium">justice@voicesbehindthecell.org</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Ticker() {
   const phrases = ["Justice Denied", "No Accountability", "Demand Answers", "Reform Now", "Voices Unheard", "Lives Lost", "Families Shattered"];
   const list = [...phrases, ...phrases, ...phrases];
