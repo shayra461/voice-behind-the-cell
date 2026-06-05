@@ -487,9 +487,9 @@ function Awareness() {
 
 function Issue() {
   const stats = [
-    { n: "27+", l: "Deaths in Bexar County custody in recent years" },
-    { n: "0", l: "Independent investigations completed" },
-    { n: "100%", l: "Of families left without real answers" },
+    { body: "Families continue raising concerns regarding deaths occurring while individuals are housed in custody." },
+    { body: "Families continue calling for independent review, transparency, and accountability following deaths in custody." },
+    { body: "Many families report unanswered questions and difficulty obtaining records following custodial deaths." },
   ];
   const failures = [
     { t: "Medical Neglect", b: "Detainees report being denied medication and emergency care until it is far too late." },
@@ -522,9 +522,8 @@ function Issue() {
         <div className="mt-16 grid sm:grid-cols-3 gap-px bg-border/60 border border-border/60">
           {stats.map((s, i) => (
             <Reveal key={i} delay={(i % 3) as 0 | 1 | 2}>
-              <div className="bg-ash p-8 md:p-10 h-full">
-                <div className="font-display text-6xl md:text-7xl text-blood leading-none">{s.n}</div>
-                <div className="mt-4 text-sm uppercase tracking-[0.2em] text-muted-foreground leading-snug">{s.l}</div>
+              <div className="bg-ash p-8 md:p-10 h-full flex items-center">
+                <div className="text-base md:text-lg text-foreground/90 leading-relaxed">{s.body}</div>
               </div>
             </Reveal>
           ))}
