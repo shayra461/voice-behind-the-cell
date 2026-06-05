@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { FinalMessage } from "@/components/FinalMessage";
@@ -129,14 +129,6 @@ function KnowYourRights() {
         </div>
       </section>
 
-      {/* Back to home */}
-      <section className="py-16 md:py-20 px-6 md:px-12 border-t border-foreground/10 text-center">
-        <Reveal>
-          <Link to="/" className="inline-block px-8 py-3 rounded-full border border-foreground/30 hover:bg-foreground hover:text-background transition-colors text-xs uppercase tracking-[0.22em] font-semibold">
-            ← Back to Home
-          </Link>
-        </Reveal>
-      </section>
 
       <FinalMessage />
       <Footer />

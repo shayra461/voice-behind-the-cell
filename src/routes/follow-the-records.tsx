@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { FinalMessage } from "@/components/FinalMessage";
@@ -137,11 +137,6 @@ function FollowTheRecords() {
               <span className="mx-3 text-foreground/30">·</span>
               <a href="mailto:justice@voicesbehindthecell.org" className="underline underline-offset-4 hover:text-foreground">justice@voicesbehindthecell.org</a>
             </p>
-          </Reveal>
-          <Reveal >
-            <Link to="/" className="inline-block mt-10 px-8 py-3 rounded-full border border-foreground/30 hover:bg-foreground hover:text-background transition-colors">
-              ← Back to Home
-            </Link>
           </Reveal>
         </div>
       </section>
