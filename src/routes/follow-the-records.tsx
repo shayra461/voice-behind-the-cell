@@ -138,11 +138,6 @@ function FollowTheRecords() {
               <a href="mailto:justice@voicesbehindthecell.org" className="underline underline-offset-4 hover:text-foreground">justice@voicesbehindthecell.org</a>
             </p>
           </Reveal>
-          <Reveal >
-            <Link to="/" className="inline-block mt-10 px-8 py-3 rounded-full border border-foreground/30 hover:bg-foreground hover:text-background transition-colors">
-              ← Back to Home
-            </Link>
-          </Reveal>
         </div>
       </section>
 
