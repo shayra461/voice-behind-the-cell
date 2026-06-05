@@ -137,6 +137,9 @@ function KnowYourRights() {
           </Link>
         </Reveal>
       </section>
+
+      <FinalMessage />
+      <Footer />
     </div>
   );
 }
