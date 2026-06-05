@@ -9,9 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as KnowYourRightsRouteImport } from './routes/know-your-rights'
 import { Route as FollowTheRecordsRouteImport } from './routes/follow-the-records'
 import { Route as IndexRouteImport } from './routes/index'
 
+const KnowYourRightsRoute = KnowYourRightsRouteImport.update({
+  id: '/know-your-rights',
+  path: '/know-your-rights',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FollowTheRecordsRoute = FollowTheRecordsRouteImport.update({
   id: '/follow-the-records',
   path: '/follow-the-records',
@@ -26,31 +32,42 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/follow-the-records': typeof FollowTheRecordsRoute
+  '/know-your-rights': typeof KnowYourRightsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/follow-the-records': typeof FollowTheRecordsRoute
+  '/know-your-rights': typeof KnowYourRightsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/follow-the-records': typeof FollowTheRecordsRoute
+  '/know-your-rights': typeof KnowYourRightsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/follow-the-records'
+  fullPaths: '/' | '/follow-the-records' | '/know-your-rights'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/follow-the-records'
-  id: '__root__' | '/' | '/follow-the-records'
+  to: '/' | '/follow-the-records' | '/know-your-rights'
+  id: '__root__' | '/' | '/follow-the-records' | '/know-your-rights'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FollowTheRecordsRoute: typeof FollowTheRecordsRoute
+  KnowYourRightsRoute: typeof KnowYourRightsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/know-your-rights': {
+      id: '/know-your-rights'
+      path: '/know-your-rights'
+      fullPath: '/know-your-rights'
+      preLoaderRoute: typeof KnowYourRightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/follow-the-records': {
       id: '/follow-the-records'
       path: '/follow-the-records'
@@ -71,6 +88,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FollowTheRecordsRoute: FollowTheRecordsRoute,
+  KnowYourRightsRoute: KnowYourRightsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
