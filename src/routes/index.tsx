@@ -368,10 +368,16 @@ function Story() {
 const events = [
   { date: "Detention", title: "Taken Into Custody", body: "Detained at Bexar County Jail. Family expected him home within days. He was healthy. He was alive.", img: jail },
   { date: "Inside", title: "Calls For Help Ignored", body: "Reports describe medical distress, neglected requests, and the deliberate silence of those entrusted with his safety.", img: null },
+  { date: "Medical Emergency", title: "Medical Emergency", body: "Inside the cell, a medical crisis unfolded. The warning signs were visible. The response was not.", img: jail },
+  { date: "Hospital Transfer", title: "Hospital Transfer", body: "He was transferred from custody to a hospital bed — already beyond the reach of the help that should have come hours earlier.", img: null },
+  { date: "Family Notification", title: "Family Notification", body: "The phone call no family is ever ready for. No explanation. No transparency. Only grief and unanswered questions.", img: null },
   { date: "The Incident", title: "Death In Custody", body: "He died behind a cell door that was supposed to protect him. The family was given no clear explanation. No body cam. No witnesses. No accountability.", img: null },
+  { date: "Advocacy Begins", title: "Advocacy Begins", body: "A grieving family refused to be silenced. The first vigils, the first signs, the first time his name was spoken in public — the movement was born from love.", img: familiesBanner },
   { date: "Community Response", title: "Families Rise", body: "Mothers, brothers, sisters, neighbors — a movement formed at the courthouse steps refusing to let his name be erased.", img: familiesBanner },
+  { date: "Foundation", title: "Voices Behind The Cell Founded", body: "Voices Behind The Cell was founded in Julian's memory — a coalition of families, organizers, and witnesses determined to hold the system accountable.", img: testimony },
   { date: "Testimony", title: "We Spoke Before the State", body: "Voices Behind The Cell stood before the Texas House Committee on County Affairs — wearing the faces of the dead — and forced legislators to listen.", img: testimony },
   { date: "Investigation Demanded", title: "We Showed Up at Council", body: "We brought photographs of the dead into the council chambers. The city was forced to look.", img: council },
+  { date: "Policy Reform Efforts", title: "Policy Reform Efforts", body: "From committee hearings to council floors, we continue pushing for transparency, body cameras, independent oversight, and laws that protect the people inside.", img: council },
   { date: "Today", title: "Still No Justice", body: "The case remains open in our hearts. The fight continues. Every signature, every share, every protest brings us closer to the truth.", img: null },
 ];
 
