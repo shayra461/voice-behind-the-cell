@@ -158,6 +158,9 @@ function KnowYourRights() {
           </Reveal>
           <Reveal>
             <div className="flex flex-wrap justify-center gap-4">
+              <a href="mailto:justice@voicesbehindthecell.org" className="inline-flex items-center gap-3 bg-white text-blood px-8 py-5 text-xs uppercase tracking-[0.3em] font-bold hover:brightness-110 transition glow-blood pulse-glow">
+                <span className="size-2 rounded-full bg-blood animate-pulse" /> Donate Now
+              </a>
               <a href="tel:+12109104817" className="inline-flex items-center gap-3 bg-background text-foreground px-8 py-5 text-xs uppercase tracking-[0.3em] font-bold hover:brightness-110 transition">
                 <span className="size-2 rounded-full bg-blood animate-pulse" /> (210) 910-4817
               </a>
