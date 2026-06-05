@@ -38,6 +38,10 @@ export function Nav() {
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-blood group-hover:w-full transition-all duration-300" />
               </a>
             ))}
+            <Link to="/follow-the-records" className="text-xs uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground transition-colors relative group">
+              Follow The Records
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-blood group-hover:w-full transition-all duration-300" />
+            </Link>
           </nav>
           <a href="#action" className="hidden md:inline-flex items-center gap-2 bg-blood text-primary-foreground px-5 py-2.5 text-xs uppercase tracking-[0.22em] font-semibold hover:brightness-110 transition pulse-glow">
             <span className="size-1.5 rounded-full bg-white animate-pulse" /> Take Action
