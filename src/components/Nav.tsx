@@ -57,29 +57,30 @@ export function Nav() {
           scrolled ? "bg-background/85 backdrop-blur-xl border-b border-border/60" : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-5 md:px-10 h-20 md:h-24 flex items-center justify-between">
-          <HashLink hash="top" className="flex items-center gap-3 group">
+        <div className="max-w-[1600px] mx-auto px-4 md:px-6 h-20 md:h-24 flex items-center justify-between gap-4">
+          <HashLink hash="top" className="flex items-center gap-3 group shrink-0">
             <img src={logo} alt="Voices Behind The Cell" className="h-14 md:h-20 w-auto" />
           </HashLink>
-          <nav className="hidden lg:flex items-center gap-9">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7 flex-1 justify-end">
             {items.map((i) => (
-              <HashLink key={i.hash} hash={i.hash} className="text-xs uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground transition-colors relative group">
+              <HashLink key={i.hash} hash={i.hash} className="whitespace-nowrap text-[11px] xl:text-xs uppercase tracking-[0.18em] xl:tracking-[0.22em] text-muted-foreground hover:text-foreground transition-colors relative group">
                 {i.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-blood group-hover:w-full transition-all duration-300" />
               </HashLink>
             ))}
-            <Link to="/follow-the-records" className="text-xs uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground transition-colors relative group">
+            <Link to="/follow-the-records" className="whitespace-nowrap text-[11px] xl:text-xs uppercase tracking-[0.18em] xl:tracking-[0.22em] text-muted-foreground hover:text-foreground transition-colors relative group">
               Follow The Records
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-blood group-hover:w-full transition-all duration-300" />
             </Link>
-            <Link to="/know-your-rights" className="text-xs uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground transition-colors relative group">
+            <Link to="/know-your-rights" className="whitespace-nowrap text-[11px] xl:text-xs uppercase tracking-[0.18em] xl:tracking-[0.22em] text-muted-foreground hover:text-foreground transition-colors relative group">
               Know Your Rights
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-blood group-hover:w-full transition-all duration-300" />
             </Link>
           </nav>
-          <HashLink hash="action" className="hidden md:inline-flex items-center gap-2 bg-blood text-primary-foreground px-5 py-2.5 text-xs uppercase tracking-[0.22em] font-semibold hover:brightness-110 transition pulse-glow">
+          <HashLink hash="action" className="hidden md:inline-flex shrink-0 whitespace-nowrap items-center gap-2 bg-blood text-primary-foreground px-4 xl:px-5 py-2.5 text-[11px] xl:text-xs uppercase tracking-[0.18em] xl:tracking-[0.22em] font-semibold hover:brightness-110 transition pulse-glow">
             <span className="size-1.5 rounded-full bg-white animate-pulse" /> Take Action
           </HashLink>
+
           <button onClick={() => setOpen(!open)} className="lg:hidden text-foreground" aria-label="Menu">
             <div className="space-y-1.5">
               <span className={`block h-px w-7 bg-foreground transition-transform ${open ? "translate-y-1.5 rotate-45" : ""}`} />
