@@ -360,6 +360,7 @@ function Story() {
           </Reveal>
         </div>
       </div>
+    </div>
     </section>
   );
 }
