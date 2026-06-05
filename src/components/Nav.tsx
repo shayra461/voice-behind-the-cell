@@ -65,6 +65,7 @@ export function Nav() {
                 <a key={i.href} href={i.href} onClick={() => setOpen(false)} className="text-sm uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground">{i.label}</a>
               ))}
               <Link to="/follow-the-records" onClick={() => setOpen(false)} className="text-sm uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground">Follow The Records</Link>
+              <Link to="/know-your-rights" onClick={() => setOpen(false)} className="text-sm uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground">Know Your Rights</Link>
             </div>
           </div>
         )}
