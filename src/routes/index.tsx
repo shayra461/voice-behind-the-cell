@@ -228,7 +228,44 @@ function Story() {
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <div className="relative max-w-7xl mx-auto">
+        {/* Julian Dena memorial header */}
+        <div className="mb-20 md:mb-28 text-center lg:text-left">
+          <Reveal>
+            <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
+              <span className="h-px w-10 bg-blood" />
+              <span className="tag-eyebrow">Who Was Julian Dena</span>
+            </div>
+          </Reveal>
+          <Reveal delay={1}>
+            <h2 className="font-display uppercase text-5xl md:text-7xl lg:text-8xl leading-[0.85] tracking-tight text-bone">
+              Julian Dena
+            </h2>
+          </Reveal>
+          <Reveal delay={1}>
+            <p className="mt-3 font-editorial italic text-2xl md:text-3xl text-blood">
+              July 30, 2020
+            </p>
+          </Reveal>
+          <Reveal delay={2}>
+            <div className="mt-8 max-w-2xl mx-auto lg:mx-0 space-y-4 text-foreground/85 text-lg md:text-xl leading-relaxed">
+              <p>
+                Before he became a custodial death statistic, he was a son, a brother, and a human being.
+              </p>
+              <p>
+                He was loved.
+              </p>
+              <p>
+                He had a family waiting for him to come home.
+              </p>
+              <p className="text-foreground font-medium">
+                His memory became the foundation of Voices Behind The Cell.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         {/* LEFT — dramatic protest diptych */}
         <Reveal className="lg:col-span-7">
           <div className="relative">
