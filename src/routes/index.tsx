@@ -648,7 +648,8 @@ function Footer() {
         <div className="md:col-span-4">
           <div className="tag-eyebrow mb-5">Contact</div>
           <ul className="space-y-3 text-sm text-foreground/80">
-            <li>Hotline · <a href="tel:+12108900101" className="hover:text-blood transition">(210) 890-0101</a></li>
+            <li>Lydia Leos · Founder, Voices Behind The Cell</li>
+            <li>Phone · <a href="tel:+12109104817" className="hover:text-blood transition">(210) 910-4817</a></li>
             <li>Email · <a href="mailto:justice@voicesbehindthecell.org" className="hover:text-blood transition">justice@voicesbehindthecell.org</a></li>
             <li className="pt-2 flex gap-3">
               {["Facebook","Instagram","TikTok","YouTube"].map((s) => (
